@@ -5,6 +5,7 @@ import EzFormPhoto from "../assets/ezFormPhoto.jpeg";
 import TaskMasterPhoto from "../assets/TaskMaster.png";
 import WeatherMePhoto from "../assets/weatherMePhoto.png";
 import PortfolioSitePhoto from "../assets/portfolioSite.png";
+import Argus from "../assets/argus_dashboard.png";
 
 export default function ProjectSection() {
   return (
@@ -25,6 +26,24 @@ export default function ProjectSection() {
               "Agile Methodologies",
             ]}
             link="https://github.com/raihanCarder/Smart-Air-App"
+            completed
+          />
+          <Project
+            title="Argus"
+            description="Argus is a GovTech intelligence platform that helps startups surface government opportunities before they hit the RFP stage. A user describes their startup, the backend collects live signals with caching and fallback, and the UI ranks the best matches on a globe with clear, actionable details."
+            image={Argus}
+            skills={[
+              "FastAPI",
+              "Next.js",
+              "React",
+              "Collaboration",
+              "Hackathon",
+              "Google Gemini API",
+              "Python",
+              "TypeScript",
+              "Firebase",
+            ]}
+            link="https://devpost.com/software/argus-uipa2c"
             completed
           />
           <Project
