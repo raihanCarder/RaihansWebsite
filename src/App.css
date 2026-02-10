@@ -27,8 +27,8 @@
 [data-theme="dark"] {
   color-scheme: dark;
   --ink-900: #f2efe9;
-  --ink-700: #d4ccc1;
-  --ink-500: #b1a89b;
+  --ink-700: #d7dde7;
+  --ink-500: #b6c0cf;
   --cream-50: #0f1011;
   --cream-100: #15171a;
   --surface-0: #141516;
@@ -74,13 +74,29 @@
 
 .page::before {
   background:
-    radial-gradient(circle at 15% 10%, rgba(224, 122, 95, 0.18), transparent 45%),
-    radial-gradient(circle at 85% 20%, rgba(138, 162, 143, 0.2), transparent 50%),
-    radial-gradient(circle at 70% 85%, rgba(242, 193, 78, 0.18), transparent 55%);
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(224, 122, 95, 0.18),
+      transparent 45%
+    ),
+    radial-gradient(
+      circle at 85% 20%,
+      rgba(138, 162, 143, 0.2),
+      transparent 50%
+    ),
+    radial-gradient(
+      circle at 70% 85%,
+      rgba(242, 193, 78, 0.18),
+      transparent 55%
+    );
 }
 
 .page::after {
-  background-image: linear-gradient(120deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+  background-image: linear-gradient(
+    120deg,
+    rgba(255, 255, 255, 0.25) 0%,
+    rgba(255, 255, 255, 0) 60%
+  );
   mix-blend-mode: multiply;
 }
 
@@ -528,7 +544,7 @@
   flex: 1;
   height: 6px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--coral-500) 0%, var(--sun-500) 60%, var(--sage-500) 100%);
+  background: var(--sage-600);
 }
 
 .education-dot {
@@ -585,7 +601,7 @@
   transition:
     transform 180ms ease,
     box-shadow 180ms ease;
-  cursor: pointer;
+  cursor: default;
 }
 
 .project-card:hover {
@@ -808,7 +824,7 @@
 
 [data-theme="dark"] .footer-tagline,
 [data-theme="dark"] .footer-text {
-  color: #d4cec4;
+  color: #cbd5f5;
 }
 
 [data-theme="dark"] .footer-title {
@@ -849,15 +865,15 @@
 }
 
 [data-theme="dark"] .hero-subtitle {
-  color: #d6cfc5;
+  color: var(--ink-500);
 }
 
 [data-theme="dark"] .eyebrow {
-  color: #c9c1b6;
+  color: var(--ink-700);
 }
 
 [data-theme="dark"] .about-text p {
-  color: #d9d2c8;
+  color: var(--ink-500);
 }
 
 [data-theme="dark"] .education-header h3 {
@@ -867,7 +883,7 @@
 [data-theme="dark"] .education-major,
 [data-theme="dark"] .education-specialization,
 [data-theme="dark"] .education-coursework {
-  color: #d6cfc5;
+  color: var(--ink-500);
 }
 
 [data-theme="dark"] .education-grad {
