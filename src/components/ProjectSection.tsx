@@ -46,7 +46,7 @@ export default function ProjectSection() {
             ]}
             timeline="February 2026"
             links={{
-              github: "https://github.com/raihanCarder",
+              github: "https://github.com/raihanCarder/Argus",
               live: "https://argus-macathon.vercel.app/",
               other: "https://devpost.com/software/argus-uipa2c",
             }}
