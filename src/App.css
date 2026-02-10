@@ -233,8 +233,9 @@
   aspect-ratio: 4 / 5;
   object-fit: cover;
   border-radius: 1.75rem;
-  box-shadow: 0 28px 60px var(--shadow-strong);
-  border: 8px solid rgba(255, 255, 255, 0.5);
+  box-shadow:
+    0 28px 60px var(--shadow-strong);
+  border: 8px solid var(--hero-panel);
 }
 
 .eyebrow {
@@ -405,7 +406,7 @@
   object-fit: cover;
   border-radius: 1.5rem;
   box-shadow: 0 20px 45px rgba(32, 30, 27, 0.16);
-  border: 6px solid rgba(255, 255, 255, 0.6);
+  border: 6px solid var(--hero-panel);
 }
 
 .carousel-dots {
