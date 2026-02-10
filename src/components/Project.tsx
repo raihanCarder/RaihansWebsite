@@ -7,7 +7,12 @@ type ProjectProps = {
   image: string;
   skills: string[];
   completed: boolean;
-  link: string;
+  timeline?: string;
+  links?: {
+    github?: string;
+    live?: string;
+    other?: string;
+  };
 };
 
 function Project({
@@ -16,7 +21,8 @@ function Project({
   image,
   skills,
   completed,
-  link,
+  timeline,
+  links,
 }: ProjectProps) {
   const content = (
     <ProjectContent
@@ -25,6 +31,8 @@ function Project({
       image={image}
       skills={skills}
       completed={completed}
+      timeline={timeline}
+      links={links}
     />
   );
 
@@ -44,18 +52,13 @@ function Project({
     });
   };
 
-  if (!link) {
-    return (
-      <a onClick={toastSuccess} className="project-card">
-        {content}
-      </a>
-    );
-  }
-
   return (
-    <a className="project-card" href={link} target="_blank" rel="noreferrer">
+    <div
+      className="project-card"
+      onClick={completed ? undefined : toastSuccess}
+    >
       {content}
-    </a>
+    </div>
   );
 }
 

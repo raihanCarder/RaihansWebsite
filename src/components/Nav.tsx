@@ -1,6 +1,30 @@
+import { useEffect, useState } from "react";
 import { go } from "../utils/scrollTo";
 
 function Nav() {
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    const stored = window.localStorage.getItem("theme");
+    if (stored === "light" || stored === "dark") {
+      return stored;
+    }
+    const prefersDark = window.matchMedia(
+      "(prefers-color-scheme: dark)",
+    ).matches;
+    return prefersDark ? "dark" : "light";
+  });
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", theme);
+    window.localStorage.setItem("theme", theme);
+  }, [theme]);
+
+  const toggleTheme = () => {
+    setTheme((prev) => {
+      const next = prev === "light" ? "dark" : "light";
+      return next;
+    });
+  };
+
   return (
     <nav className="navbar">
       <div className="navbar-inner">
@@ -33,6 +57,22 @@ function Nav() {
           <a href="#" onClick={go("projects")}>
             Projects
           </a>
+          <button
+            type="button"
+            className="theme-toggle"
+            onClick={toggleTheme}
+            aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}
+          >
+            {theme === "light" ? (
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12 3.2a.8.8 0 0 1 .8.8v1.9a.8.8 0 1 1-1.6 0V4a.8.8 0 0 1 .8-.8zm0 13.9a4.1 4.1 0 1 0 0-8.2 4.1 4.1 0 0 0 0 8.2zm8-4.1a.8.8 0 0 1 .8-.8h1.9a.8.8 0 1 1 0 1.6H20.8a.8.8 0 0 1-.8-.8zM12 18.2a.8.8 0 0 1 .8.8v1.9a.8.8 0 1 1-1.6 0V19a.8.8 0 0 1 .8-.8zm-8-5a.8.8 0 0 1 .8-.8h1.9a.8.8 0 1 1 0 1.6H4.8a.8.8 0 0 1-.8-.8zm13.2-5.6a.8.8 0 0 1 1.1 0l1.3 1.3a.8.8 0 1 1-1.1 1.1l-1.3-1.3a.8.8 0 0 1 0-1.1zM5.7 17.2a.8.8 0 0 1 1.1 0l1.3 1.3a.8.8 0 0 1-1.1 1.1l-1.3-1.3a.8.8 0 0 1 0-1.1zm12.6 2.4a.8.8 0 0 1-1.1 0l-1.3-1.3a.8.8 0 1 1 1.1-1.1l1.3 1.3a.8.8 0 0 1 0 1.1zM5.7 6.5a.8.8 0 0 1 0 1.1L4.4 8.9a.8.8 0 1 1-1.1-1.1l1.3-1.3a.8.8 0 0 1 1.1 0z" />
+              </svg>
+            ) : (
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path d="M12.7 3.2a.8.8 0 0 1 .7.9 7.1 7.1 0 0 0 7.6 8 7.8 7.8 0 1 1-8.4-8.9.8.8 0 0 1 .1 1.6 6.2 6.2 0 1 0 6.3 7.1 8.7 8.7 0 0 1-8.5-8.7.8.8 0 0 1 .2-.7.8.8 0 0 1 .7-.3z" />
+              </svg>
+            )}
+          </button>
         </div>
       </div>
     </nav>

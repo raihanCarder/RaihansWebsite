@@ -2,8 +2,6 @@ import Project from "./Project";
 import SmartAirPhoto from "../assets/smartAirPhoto.png";
 import Music4YouPhoto from "../assets/Music4YouLogo.png";
 import EzFormPhoto from "../assets/ezFormPhoto.jpeg";
-import TaskMasterPhoto from "../assets/TaskMaster.png";
-import WeatherMePhoto from "../assets/weatherMePhoto.png";
 import PortfolioSitePhoto from "../assets/portfolioSite.png";
 import Argus from "../assets/argus_dashboard.png";
 
@@ -25,7 +23,10 @@ export default function ProjectSection() {
               "Teamwork",
               "Agile Methodologies",
             ]}
-            link="https://github.com/raihanCarder/Smart-Air-App"
+            timeline="Sept 2025 - Dec 2025"
+            links={{
+              github: "https://github.com/raihanCarder/Smart-Air-App",
+            }}
             completed
           />
           <Project
@@ -43,7 +44,12 @@ export default function ProjectSection() {
               "TypeScript",
               "Firebase",
             ]}
-            link="https://devpost.com/software/argus-uipa2c"
+            timeline="February 2026"
+            links={{
+              github: "https://github.com/raihanCarder",
+              live: "https://argus-macathon.vercel.app/",
+              other: "https://devpost.com/software/argus-uipa2c",
+            }}
             completed
           />
           <Project
@@ -57,7 +63,8 @@ export default function ProjectSection() {
               "Supabase",
               "PostgreSQL",
             ]}
-            link=""
+            timeline="Dec 2025 - Present"
+            links={{ github: "", live: "", other: "" }}
             completed={false}
           />
           <Project
@@ -73,31 +80,24 @@ export default function ProjectSection() {
               "Hackathon",
               "Accessibility",
             ]}
-            link="https://github.com/raihanCarder/Ez-Form"
+            timeline="January 2026"
+            links={{
+              github: "https://github.com/raihanCarder/Ez-Form",
+              other:
+                "https://devpost.com/software/ez-form?ref_content=my-projects-tab&ref_feature=my_projects",
+            }}
             completed
           />
-          <Project
-            title="TaskMaster"
-            description="To-do app made with JavaScript and HTML/CSS."
-            image={TaskMasterPhoto}
-            skills={["JavaScript", "HTML", "CSS"]}
-            link="https://raihancarder.github.io/TaskMaster/"
-            completed
-          />
-          <Project
-            title="WeatherMe"
-            description="Weather app made with JS, HTML/CSS, and the Visual Crossing Weather API"
-            image={WeatherMePhoto}
-            skills={["JavaScript", "HTML", "CSS", "Visual Crossing API"]}
-            link="https://raihancarder.github.io/WeatherMe/"
-            completed
-          />
+
           <Project
             title="My Website"
             description="Raihan Carder's Portfolio Website (This site)"
             image={PortfolioSitePhoto}
             skills={["TypeScript", "React", "Portfolio"]}
-            link="https://github.com/raihanCarder/raihanCarder.github.io"
+            timeline="Dec 2025 - Present"
+            links={{
+              github: "https://github.com/raihanCarder/raihanCarder.github.io",
+            }}
             completed
           />
         </div>
