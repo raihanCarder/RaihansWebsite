@@ -424,7 +424,7 @@
 }
 
 .section-inner.wide {
-  max-width: 1200px;
+  max-width: none;
   width: 100%;
 }
 
