@@ -1,4 +1,4 @@
-import toast from "react-hot-toast";
+// import toast from "react-hot-toast";
 import ProjectContent from "./ProjectContents";
 
 type ProjectProps = {
@@ -36,30 +36,23 @@ function Project({
     />
   );
 
-  const toastSuccess = () => {
-    toast.success("Not live yet… coming soon 👀", {
-      style: {
-        border: "1px solid rgba(15, 23, 42, 0.18)",
-        padding: "14px 16px",
-        color: "#0f172a",
-        background: "#f8fafc",
-        boxShadow: "0 12px 30px rgba(15, 23, 42, 0.12)",
-      },
-      iconTheme: {
-        primary: "#1d4ed8",
-        secondary: "#fff1f2",
-      },
-    });
-  };
+  // const toastSuccess = () => {
+  //   toast.success("Not live yet… coming soon 👀", {
+  //     style: {
+  //       border: "1px solid rgba(15, 23, 42, 0.18)",
+  //       padding: "14px 16px",
+  //       color: "#0f172a",
+  //       background: "#f8fafc",
+  //       boxShadow: "0 12px 30px rgba(15, 23, 42, 0.12)",
+  //     },
+  //     iconTheme: {
+  //       primary: "#1d4ed8",
+  //       secondary: "#fff1f2",
+  //     },
+  //   });
+  // };
 
-  return (
-    <div
-      className="project-card"
-      onClick={completed ? undefined : toastSuccess}
-    >
-      {content}
-    </div>
-  );
+  return <div className="project-card">{content}</div>;
 }
 
 export default Project;
