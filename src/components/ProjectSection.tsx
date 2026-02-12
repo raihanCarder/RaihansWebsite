@@ -64,7 +64,11 @@ export default function ProjectSection() {
               "PostgreSQL",
             ]}
             timeline="Dec 2025 - Present"
-            links={{ github: "", live: "", other: "" }}
+            links={{
+              github: "https://github.com/raihanCarder/ratemusic",
+              live: "",
+              other: "",
+            }}
             completed={false}
           />
           <Project
