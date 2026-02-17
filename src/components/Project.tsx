@@ -13,6 +13,7 @@ type ProjectProps = {
     live?: string;
     other?: string;
   };
+  awards?: string[];
 };
 
 function Project({
@@ -23,6 +24,7 @@ function Project({
   completed,
   timeline,
   links,
+  awards,
 }: ProjectProps) {
   const content = (
     <ProjectContent
@@ -33,6 +35,7 @@ function Project({
       completed={completed}
       timeline={timeline}
       links={links}
+      awards={awards}
     />
   );
 

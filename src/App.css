@@ -659,6 +659,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
+  min-width: 0;
 }
 
 .project-meta h3 {
@@ -727,6 +728,40 @@
 .project-links.muted {
   font-size: 0.85rem;
   color: var(--ink-500);
+}
+
+.project-awards {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.project-award-item {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: 0.45rem;
+  max-width: 100%;
+  width: fit-content;
+  padding: 0.35rem 0.62rem;
+  border-radius: 0.6rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(15, 23, 42, 0.05);
+  color: #334155;
+  font-size: 0.76rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  line-height: 1.3;
+}
+
+.award-emoji {
+  flex-shrink: 0;
+  line-height: 1;
+  font-size: 0.88rem;
+  margin-top: 0.04rem;
+}
+
+.award-text {
+  overflow-wrap: anywhere;
 }
 
 .link-chip {
@@ -812,6 +847,12 @@
   background: #111318;
   border-color: rgba(255, 255, 255, 0.12);
   color: #e2e8f0;
+}
+
+[data-theme="dark"] .project-award-item {
+  border-color: rgba(255, 255, 255, 0.14);
+  background: rgba(255, 255, 255, 0.08);
+  color: #d7dde7;
 }
 
 [data-theme="dark"] .carousel-dot {

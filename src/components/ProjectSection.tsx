@@ -56,7 +56,7 @@ export default function ProjectSection() {
 
           <Project
             title="SeniCare"
-            description="🏆 Winner of Best use of Google Gemini API @ CtrlHackDel 2026. SeniCare is a senior-friendly daily check-in product for clinics: a lightweight, non-intimidating flow that combines conversational screening with camera-based biomarker signals to produce clinician-ready triage and summaries. The goal is to make remote monitoring practical for seniors who may not have consistent day-to-day support."
+            description="SeniCare is a senior-friendly daily check-in product for clinics: a lightweight, non-intimidating flow that combines conversational screening with camera-based biomarker signals to produce clinician-ready triage and summaries. The goal is to make remote monitoring practical for seniors who may not have consistent day-to-day support."
             image={Senicare}
             skills={[
               "FastAPI",
@@ -74,6 +74,7 @@ export default function ProjectSection() {
               github: "https://github.com/raihanCarder/senicare",
               other: "https://devpost.com/software/senicare",
             }}
+            awards={["Best Use of Google Gemini API · CtrlHackDel 2026"]}
             completed
           />
 

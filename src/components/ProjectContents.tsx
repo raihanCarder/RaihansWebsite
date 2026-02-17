@@ -12,6 +12,7 @@ type ProjectContentProps = {
     live?: string;
     other?: string;
   };
+  awards?: string[];
 };
 
 export default function ProjectContent({
@@ -22,7 +23,15 @@ export default function ProjectContent({
   completed,
   timeline,
   links,
+  awards,
 }: ProjectContentProps) {
+  const githubLink = links?.github;
+  const liveLink = links?.live;
+  const otherLink = links?.other;
+  const awardList = awards ?? [];
+  const hasLinks = Boolean(githubLink || liveLink || otherLink);
+  const hasAwards = awardList.length > 0;
+
   return (
     <>
       <div className="project-image">
@@ -38,12 +47,12 @@ export default function ProjectContent({
         <div className="project-meta">
           <div className="project-title">
             <h3>{title}</h3>
-            {links && (links.github || links.live || links.other) ? (
+            {hasLinks ? (
               <div className="project-links">
-                {links.github ? (
+                {githubLink ? (
                   <a
                     className="link-chip"
-                    href={links.github}
+                    href={githubLink}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${title} GitHub`}
@@ -54,10 +63,10 @@ export default function ProjectContent({
                     </svg>
                   </a>
                 ) : null}
-                {links.live ? (
+                {liveLink ? (
                   <a
                     className="link-chip"
-                    href={links.live}
+                    href={liveLink}
                     target="_blank"
                     rel="noreferrer"
                     aria-label={`${title} Live demo`}
@@ -68,40 +77,52 @@ export default function ProjectContent({
                     </svg>
                   </a>
                 ) : null}
-            {links.other ? (
-              <a
-                className="link-chip"
-                href={links.other}
-                target="_blank"
-                rel="noreferrer"
-                aria-label={`${title} Link`}
-                title="Link"
-              >
-                <svg viewBox="0 0 24 24" aria-hidden="true">
-                  <rect
-                    x="3.5"
-                    y="3.5"
-                    width="17"
-                    height="17"
-                    rx="4"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="1.4"
-                  />
-                  <text
-                    x="12"
-                    y="15"
-                    textAnchor="middle"
-                    fontSize="8.5"
-                    fontWeight="700"
-                    fontFamily="Outfit, system-ui, sans-serif"
-                    fill="currentColor"
+                {otherLink ? (
+                  <a
+                    className="link-chip"
+                    href={otherLink}
+                    target="_blank"
+                    rel="noreferrer"
+                    aria-label={`${title} Link`}
+                    title="Link"
                   >
-                    DP
-                  </text>
-                </svg>
-              </a>
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <rect
+                        x="3.5"
+                        y="3.5"
+                        width="17"
+                        height="17"
+                        rx="4"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="1.4"
+                      />
+                      <text
+                        x="12"
+                        y="15"
+                        textAnchor="middle"
+                        fontSize="8.5"
+                        fontWeight="700"
+                        fontFamily="Outfit, system-ui, sans-serif"
+                        fill="currentColor"
+                      >
+                        DP
+                      </text>
+                    </svg>
+                  </a>
+                ) : null}
+              </div>
             ) : null}
+            {hasAwards ? (
+              <div className="project-awards" aria-label={`${title} awards`}>
+                {awardList.map((award) => (
+                  <div key={award} className="project-award-item">
+                    <span className="award-emoji" aria-hidden="true">
+                      🏆
+                    </span>
+                    <span className="award-text">{award}</span>
+                  </div>
+                ))}
               </div>
             ) : null}
           </div>
