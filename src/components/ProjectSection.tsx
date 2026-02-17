@@ -1,9 +1,10 @@
 import Project from "./Project";
-import SmartAirPhoto from "../assets/smartAirPhoto.png";
+import SmartAirPhoto from "../assets/smartAirPhoto.jpg";
 import Music4YouPhoto from "../assets/Music4YouLogo.png";
 import EzFormPhoto from "../assets/ezFormPhoto.jpeg";
-import PortfolioSitePhoto from "../assets/portfolioSite.png";
-import Argus from "../assets/argus_dashboard.png";
+import PortfolioSitePhoto from "../assets/portfolioSite.jpg";
+import Argus from "../assets/argus_dashboard.jpg";
+import Senicare from "../assets/Senicare.png";
 
 export default function ProjectSection() {
   return (
@@ -52,6 +53,30 @@ export default function ProjectSection() {
             }}
             completed
           />
+
+          <Project
+            title="SeniCare"
+            description="🏆 Winner of Best use of Google Gemini API @ CtrlHackDel 2026. SeniCare is a senior-friendly daily check-in product for clinics: a lightweight, non-intimidating flow that combines conversational screening with camera-based biomarker signals to produce clinician-ready triage and summaries. The goal is to make remote monitoring practical for seniors who may not have consistent day-to-day support."
+            image={Senicare}
+            skills={[
+              "FastAPI",
+              "React",
+              "Collaboration",
+              "Hackathon Winner",
+              "Google Gemini API",
+              "Python",
+              "TypeScript",
+              "MongoDB",
+              "Tailwind",
+            ]}
+            timeline="February 2026"
+            links={{
+              github: "https://github.com/raihanCarder/senicare",
+              other: "https://devpost.com/software/senicare",
+            }}
+            completed
+          />
+
           <Project
             title="Music4You"
             description="Music4You is a personal full-stack web project inspired by my love for music, rating media, and platforms like IMDb and Letterboxd. The goal is to create a space where people can rate music, discover shared tastes, and connect with friends through their listening preferences."

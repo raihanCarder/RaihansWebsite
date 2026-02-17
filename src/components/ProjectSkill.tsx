@@ -22,7 +22,10 @@ function ProjectSkill({ name }: SkillProps) {
     Python: { background: "#fde68a", text: "#92400e" },
     "Google Gemini API": { background: "#e0e7ff", text: "#3730a3" },
     Hackathon: { background: "#fae8ff", text: "#7e22ce" },
+    "Hackathon Winner": { background: "#fef3c7", text: "#92400e" },
     Accessibility: { background: "#ecfccb", text: "#3f6212" },
+    MongoDB: { background: "#dcfce7", text: "#166534" },
+    Tailwind: { background: "#cffafe", text: "#0e7490" },
     "Visual Crossing API": { background: "#cffafe", text: "#0e7490" },
     Portfolio: { background: "#d1fae5", text: "#065f46" },
   };

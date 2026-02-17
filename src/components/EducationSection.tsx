@@ -21,7 +21,8 @@ export default function EducationSection() {
             <img
               src={UoftPhoto}
               alt="UofT Scarborough campus"
-              loading="eager"
+              loading="lazy"
+              decoding="async"
             />
           </div>
         </div>

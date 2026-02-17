@@ -30,6 +30,8 @@ export default function ImageCarousel() {
           src={images[activeIndex]}
           alt={`About me ${activeIndex + 1}`}
           className="about-image"
+          loading="lazy"
+          decoding="async"
         />
         <div className="carousel-dots" role="tablist" aria-label="About images">
           {images.map((_, index) => (

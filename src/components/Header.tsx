@@ -36,6 +36,8 @@ export default function Header() {
             alt="Portrait of Raihan Carder"
             className="hero-image"
             loading="eager"
+            decoding="async"
+            fetchPriority="high"
           />
         </div>
       </div>

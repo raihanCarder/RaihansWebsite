@@ -26,7 +26,13 @@ export default function ProjectContent({
   return (
     <>
       <div className="project-image">
-        <img src={image} alt={title} loading="eager" />
+        <img
+          src={image}
+          alt={title}
+          loading="lazy"
+          decoding="async"
+          fetchPriority="low"
+        />
       </div>
       <div className="project-body">
         <div className="project-meta">
