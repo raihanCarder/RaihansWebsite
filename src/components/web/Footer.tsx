@@ -1,4 +1,4 @@
-import { go } from "../utils/scrollTo";
+import { go } from "../../utils/scrollTo";
 
 export default function Footer() {
   return (

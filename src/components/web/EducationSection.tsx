@@ -1,4 +1,4 @@
-import UoftPhoto from "../assets/uoftSign.jpg";
+import UoftPhoto from "../../assets/uoftSign.jpg";
 import EducationTimeline from "./EducationTimeline";
 import EducationHeader from "./EducationHeader";
 
