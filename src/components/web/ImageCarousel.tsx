@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { images } from "../utils/carouselImages";
+import { images } from "../../utils/carouselImages";
 
 export default function ImageCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);

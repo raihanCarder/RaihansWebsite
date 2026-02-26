@@ -1,6 +1,6 @@
-import { go } from "../utils/scrollTo";
+import { go } from "../../utils/scrollTo";
 import resumePdf from "/Raihan_Carder_Resume.pdf";
-import headerPhoto from "../assets/headerPhoto.jpeg";
+import headerPhoto from "../../assets/headerPhoto.jpeg";
 
 export default function Header() {
   return (

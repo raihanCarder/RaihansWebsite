@@ -1,10 +1,10 @@
 import Project from "./Project";
-import SmartAirPhoto from "../assets/smartAirPhoto.jpg";
-import Music4YouPhoto from "../assets/Music4YouLogo.png";
-import EzFormPhoto from "../assets/ezFormPhoto.jpeg";
-import PortfolioSitePhoto from "../assets/portfolioSite.jpg";
-import Argus from "../assets/argus_dashboard.jpg";
-import Senicare from "../assets/Senicare.png";
+import SmartAirPhoto from "../../assets/smartAirPhoto.jpg";
+import Music4YouPhoto from "../../assets/Music4YouLogo.png";
+import EzFormPhoto from "../../assets/ezFormPhoto.jpeg";
+import PortfolioSitePhoto from "../../assets/portfolioSite.jpg";
+import Argus from "../../assets/argus_dashboard.jpg";
+import Senicare from "../../assets/Senicare.png";
 
 export default function ProjectSection() {
   return (
