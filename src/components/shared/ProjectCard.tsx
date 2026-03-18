@@ -52,19 +52,21 @@ export default function ProjectCard({ project }: ProjectCardProps) {
             ))}
           </div>
         </div>
-        <div className="project-links">
-          {project.links.map((link) => (
-            <a
-              className="inline-link"
-              href={link.href}
-              key={link.label}
-              target="_blank"
-              rel="noreferrer"
-            >
-              {link.label}
-            </a>
-          ))}
-        </div>
+        {project.links.length ? (
+          <div className="project-links">
+            {project.links.map((link) => (
+              <a
+                className="inline-link"
+                href={link.href}
+                key={link.label}
+                target="_blank"
+                rel="noreferrer"
+              >
+                {link.label}
+              </a>
+            ))}
+          </div>
+        ) : null}
       </div>
     </article>
   );

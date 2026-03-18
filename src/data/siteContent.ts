@@ -1,6 +1,8 @@
 import headerPhoto from "../assets/headerPhoto.jpeg";
 import uoftPhoto from "../assets/uoftSign.jpg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
+import beaconPhoto from "../assets/beacon.png";
+import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
 import seniCarePhoto from "../assets/senicare.png";
 import music4YouPhoto from "../assets/Music4YouLogo.png";
@@ -21,8 +23,8 @@ export const introSectionContent: IntroSectionContent = {
   links: [
     {
       label: "Resume",
-      href: "data:text/plain;charset=utf-8,",
-      downloadFileName: "Raihan_Carder_Resume.txt",
+      href: resumePdf,
+      downloadFileName: "Raihan_Carder_Resume.pdf",
     },
     { label: "GitHub", href: "https://github.com/raihanCarder" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raihan-carder/" },
@@ -99,8 +101,38 @@ export const projectsSectionContent: ProjectsSectionContent = {
   tag: "Projects",
   title: "My Favourites",
   description:
-    "I have built projects across health, gov tech, and more personal spaces like music, with a mix of practical products, hackathon builds, and things made for enjoyment.",
+    "I have built projects across community support, health, gov tech, and more personal spaces like music, with a mix of practical products, hackathon builds, and things made for enjoyment.",
   projects: [
+    {
+      title: "Beacon",
+      category: "Community Support",
+      summary:
+        "Location-aware support platform that helps people find trusted nearby services like food support, shelters, clinics, social services, and legal help, then builds longer-term stability plans with grounded AI workflows.",
+      image: beaconPhoto,
+      imageWidth: 900,
+      imageHeight: 486,
+      timeline: "March 2026",
+      status: "Community hack",
+      skills: [
+        "Next.js",
+        "TypeScript",
+        "Python",
+        "Supabase",
+        "Gemini API",
+        "Google Maps API",
+        "Brave Search API",
+      ],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/raihanCarder/genaigenesis2026",
+        },
+        {
+          label: "Devpost",
+          href: "https://devpost.com/software/beacon-k4pstn",
+        },
+      ],
+    },
     {
       title: "Argus",
       category: "GovTech",
