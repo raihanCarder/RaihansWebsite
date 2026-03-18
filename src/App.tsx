@@ -1,37 +1,30 @@
-import { useEffect, useState } from "react";
 import "./App.css";
-import { Toaster } from "react-hot-toast";
-import MobileExperience from "./components/mobile/MobileExperience";
-import WebExperience from "./components/web/WebExperience";
-
-const mobileQuery = "(max-width: 768px)";
-
-const getIsMobile = () => {
-  if (typeof window === "undefined") {
-    return false;
-  }
-  return window.matchMedia(mobileQuery).matches;
-};
+import AboutSection from "./components/sections/AboutSection";
+import EducationSection from "./components/sections/EducationSection";
+import IntroSection from "./components/sections/IntroSection";
+import ProjectsSection from "./components/sections/ProjectsSection";
+import SiteFooter from "./components/sections/SiteFooter";
+import {
+  aboutSectionContent,
+  educationSectionContent,
+  footerSectionContent,
+  introSectionContent,
+  projectsSectionContent,
+} from "./data/siteContent";
+import { useIntroFog } from "./hooks/useIntroFog";
 
 function App() {
-  const [isMobile, setIsMobile] = useState<boolean>(() => getIsMobile());
-
-  useEffect(() => {
-    const query = window.matchMedia(mobileQuery);
-    const onChange = ({ matches }: MediaQueryListEvent) => {
-      setIsMobile(matches);
-    };
-
-    query.addEventListener("change", onChange);
-    return () => {
-      query.removeEventListener("change", onChange);
-    };
-  }, []);
+  const heroRef = useIntroFog();
 
   return (
-    <div className={`page ${isMobile ? "mobile-page" : ""}`}>
-      <Toaster position="bottom-center" reverseOrder={false} />
-      {isMobile ? <MobileExperience /> : <WebExperience />}
+    <div className="portfolio-shell">
+      <main>
+        <IntroSection content={introSectionContent} heroRef={heroRef} />
+        <AboutSection content={aboutSectionContent} />
+        <EducationSection content={educationSectionContent} />
+        <ProjectsSection content={projectsSectionContent} />
+      </main>
+      <SiteFooter content={footerSectionContent} />
     </div>
   );
 }
