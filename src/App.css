@@ -474,8 +474,12 @@
 
 .project-image-wrap {
   position: relative;
+  display: grid;
+  place-items: center;
   overflow: hidden;
   align-self: start;
+  justify-self: stretch;
+  width: 100%;
   aspect-ratio: 16 / 11;
   min-height: 0;
   border-radius: calc(var(--radius-xl) - 10px);
@@ -490,10 +494,11 @@
 
 .project-image-wrap img {
   display: block;
+  margin: 0 auto;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
+  object-position: center center;
   transition: transform 260ms ease;
 }
 
@@ -926,6 +931,22 @@
 
   .project-content {
     padding: 0;
+  }
+
+  .project-image-wrap {
+    margin-inline: auto;
+  }
+
+  .project-links {
+    gap: 0.65rem;
+  }
+
+  .inline-link {
+    min-height: 2.5rem;
+    padding: 0.58rem 0.9rem;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.04);
   }
 
   .project-meta-row {
