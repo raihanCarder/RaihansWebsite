@@ -49,6 +49,7 @@
   inset: 0;
   width: 100% !important;
   height: 100% !important;
+  pointer-events: none;
 }
 
 .hero-overlay {
@@ -239,6 +240,7 @@
   height: 0.48rem;
   border-radius: 999px;
   background: rgba(248, 248, 250, 0.9);
+  will-change: transform, opacity;
   animation: scrollWheel 1.8s ease-in-out infinite;
 }
 
@@ -264,6 +266,9 @@
 
 .content-section {
   padding: 5rem 0 0;
+}
+
+.deferred-section {
   content-visibility: auto;
   contain-intrinsic-size: 1px 900px;
 }

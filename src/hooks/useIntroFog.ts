@@ -68,11 +68,12 @@ export const useIntroFog = () => {
     const browserWindow = window as WindowWithVanta;
     let cancelled = false;
     let introVisible = false;
-    let loadHandler: (() => void) | null = null;
+    let readyHandler: (() => void) | null = null;
     let timerId: number | null = null;
     let idleId: number | null = null;
     let observer: IntersectionObserver | null = null;
     let activeFog: VantaEffect | null = null;
+    let fogInitializing = false;
     const fogEnabled = shouldEnableFog();
 
     const destroyFog = () => {
@@ -86,10 +87,13 @@ export const useIntroFog = () => {
         !introVisible ||
         !fogEnabled ||
         activeFog ||
+        fogInitializing ||
         document.visibilityState !== "visible"
       ) {
         return;
       }
+
+      fogInitializing = true;
 
       try {
         if (!browserWindow.THREE) {
@@ -116,6 +120,8 @@ export const useIntroFog = () => {
         });
       } catch (error) {
         console.error("Unable to initialize Vanta fog background.", error);
+      } finally {
+        fogInitializing = false;
       }
     };
 
@@ -169,19 +175,21 @@ export const useIntroFog = () => {
 
     document.addEventListener("visibilitychange", onVisibilityChange);
 
-    if (document.readyState === "complete") {
-      startWhenIdle();
-    } else {
-      loadHandler = () => {
+    if (document.readyState === "loading") {
+      readyHandler = () => {
         startWhenIdle();
       };
-      window.addEventListener("load", loadHandler, { once: true });
+      document.addEventListener("DOMContentLoaded", readyHandler, {
+        once: true,
+      });
+    } else {
+      startWhenIdle();
     }
 
     return () => {
       cancelled = true;
-      if (loadHandler) {
-        window.removeEventListener("load", loadHandler);
+      if (readyHandler) {
+        document.removeEventListener("DOMContentLoaded", readyHandler);
       }
       if (timerId !== null) {
         window.clearTimeout(timerId);

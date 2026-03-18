@@ -7,7 +7,7 @@ type ProjectsSectionProps = {
 
 export default function ProjectsSection({ content }: ProjectsSectionProps) {
   return (
-    <section className="content-section" id="projects">
+    <section className="content-section deferred-section" id="projects">
       <div className="section-heading section-heading-wide">
         <div>
           <p className="section-tag">{content.tag}</p>

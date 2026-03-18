@@ -20,6 +20,7 @@ export const loadScript = (src: string) => {
       Object.assign(document.createElement("script"), {
         src,
         async: true,
+        crossOrigin: "anonymous",
       });
 
     const cleanup = () => {
@@ -35,6 +36,10 @@ export const loadScript = (src: string) => {
 
     const onError = () => {
       cleanup();
+      scriptCache.delete(src);
+      if (!existing) {
+        script.remove();
+      }
       reject(new Error(`Failed to load script: ${src}`));
     };
 
@@ -42,7 +47,8 @@ export const loadScript = (src: string) => {
     script.addEventListener("error", onError);
 
     if (!existing) {
-      document.body.appendChild(script);
+      script.fetchPriority = "low";
+      document.head.appendChild(script);
     }
 
     if (existing && script.dataset.loaded === "true") {

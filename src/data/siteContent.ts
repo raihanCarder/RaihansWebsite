@@ -40,7 +40,7 @@ export const aboutSectionContent: AboutSectionContent = {
   image: headerPhoto,
   imageAlt: "Portrait of Raihan Carder",
   portraitKicker: "Raihan Carder",
-  portraitTitle: "Building software that feels clear, human, and worth using.",
+  portraitTitle: "Aspiring Software Engineer",
   portraitBody:
     "I enjoy taking ideas from rough concept to something people can actually use. That usually means working across interface, logic, and systems until the product feels coherent end to end.",
   story: [
@@ -112,7 +112,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
       imageWidth: 900,
       imageHeight: 486,
       timeline: "March 2026",
-      status: "Community hack",
+      status: "Completed",
       skills: [
         "Next.js",
         "TypeScript",
@@ -121,6 +121,8 @@ export const projectsSectionContent: ProjectsSectionContent = {
         "Gemini API",
         "Google Maps API",
         "Brave Search API",
+        "Langchain",
+        "PostgreSQL",
       ],
       links: [
         {
