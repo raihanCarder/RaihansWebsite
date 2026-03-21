@@ -9,7 +9,7 @@ export default function EducationSection({
   content,
 }: EducationSectionProps) {
   return (
-    <section className="content-section deferred-section" id="education">
+    <section className="content-section content-section-edge content-section-edge-right deferred-section" id="education">
       <div className="content-section-shell content-section-shell-education">
         <SectionHeading tag={content.tag} title={content.title} />
 

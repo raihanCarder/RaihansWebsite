@@ -7,7 +7,7 @@ type AboutSectionProps = {
 
 export default function AboutSection({ content }: AboutSectionProps) {
   return (
-    <section className="content-section" id="about">
+    <section className="content-section content-section-edge content-section-edge-left" id="about">
       <div className="content-section-shell content-section-shell-about">
         <SectionHeading tag={content.tag} title={content.title} />
 
