@@ -22,7 +22,7 @@ export const introSectionContent: IntroSectionContent = {
     "Computer Science student at UofT specializing in software engineering, building clean full-stack, AI, and mobile experiences.",
   links: [
     {
-      label: "Resume",
+      label: "Download Resume",
       href: resumePdf,
       downloadFileName: "Raihan_Carder_Resume.pdf",
     },

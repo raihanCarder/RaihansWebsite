@@ -11,15 +11,12 @@ import {
   introSectionContent,
   projectsSectionContent,
 } from "./data/siteContent";
-import { useIntroFog } from "./hooks/useIntroFog";
 
 function App() {
-  const heroRef = useIntroFog();
-
   return (
     <div className="portfolio-shell">
       <main>
-        <IntroSection content={introSectionContent} heroRef={heroRef} />
+        <IntroSection content={introSectionContent} />
         <AboutSection content={aboutSectionContent} />
         <EducationSection content={educationSectionContent} />
         <ProjectsSection content={projectsSectionContent} />

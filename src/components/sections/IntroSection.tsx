@@ -1,18 +1,26 @@
-import type { RefObject } from "react";
 import type { IntroSectionContent } from "../../types/site";
+import LiquidChrome from "../shared/LiquidChrome";
 import SocialLinks from "../shared/SocialLinks";
 
 type IntroSectionProps = {
   content: IntroSectionContent;
-  heroRef: RefObject<HTMLElement | null>;
 };
 
-export default function IntroSection({
-  content,
-  heroRef,
-}: IntroSectionProps) {
+const HERO_BASE_COLOR: [number, number, number] = [0.72, 0.72, 0.72];
+
+export default function IntroSection({ content }: IntroSectionProps) {
   return (
-    <section className="hero-panel" id="top" ref={heroRef}>
+    <section className="hero-panel" id="top">
+      <LiquidChrome
+        amplitude={0.24}
+        aria-hidden="true"
+        baseColor={HERO_BASE_COLOR}
+        className="hero-liquid-chrome"
+        frequencyX={2.35}
+        frequencyY={2}
+        interactive={false}
+        speed={0.2}
+      />
       <div className="hero-overlay" aria-hidden="true" />
       <div className="hero-content hero-content-intro">
         <SocialLinks
@@ -20,6 +28,7 @@ export default function IntroSection({
           className="hero-socials"
           linkClassName="hero-social-link"
           links={content.links}
+          showIcons
         />
         <div className="hero-copy hero-copy-intro">
           <p className="eyebrow hero-kicker">{content.kicker}</p>
