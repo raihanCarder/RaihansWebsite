@@ -4,6 +4,54 @@ type ProjectCardProps = {
   project: Project;
 };
 
+type SkillTone = "core" | "data" | "ai" | "mobile" | "product" | "api" | "neutral";
+
+const getSkillTone = (skill: string): SkillTone => {
+  const normalized = skill.toLowerCase();
+
+  if (
+    normalized.includes("react") ||
+    normalized.includes("next.js") ||
+    normalized.includes("typescript") ||
+    normalized.includes("javascript")
+  ) {
+    return "core";
+  }
+
+  if (
+    normalized.includes("fastapi") ||
+    normalized.includes("supabase") ||
+    normalized.includes("firebase") ||
+    normalized.includes("mongodb") ||
+    normalized.includes("postgresql") ||
+    normalized.includes("python")
+  ) {
+    return "data";
+  }
+
+  if (normalized.includes("gemini") || normalized.includes("langchain")) {
+    return "ai";
+  }
+
+  if (normalized.includes("android") || normalized.includes("java")) {
+    return "mobile";
+  }
+
+  if (
+    normalized.includes("tailwind") ||
+    normalized.includes("agile") ||
+    normalized.includes("accessibility")
+  ) {
+    return "product";
+  }
+
+  if (normalized.includes("api")) {
+    return "api";
+  }
+
+  return "neutral";
+};
+
 export default function ProjectCard({ project }: ProjectCardProps) {
   return (
     <article className="glass-panel project-card">
@@ -46,7 +94,10 @@ export default function ProjectCard({ project }: ProjectCardProps) {
           <p className="project-skills-label">Built with</p>
           <div className="project-tags">
             {project.skills.map((skill) => (
-              <span className="soft-pill project-skill" key={skill}>
+              <span
+                className={`soft-pill project-skill project-skill--${getSkillTone(skill)}`}
+                key={skill}
+              >
                 {skill}
               </span>
             ))}
