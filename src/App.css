@@ -753,6 +753,9 @@
 }
 
 .timeline-shell {
+  --timeline-rail-x: 1.2rem;
+  --timeline-item-offset: 2rem;
+  --timeline-dot-size: 0.8rem;
   position: relative;
   display: grid;
   gap: 1rem;
@@ -763,7 +766,7 @@
   position: absolute;
   top: 1rem;
   bottom: 1rem;
-  left: 1.2rem;
+  left: var(--timeline-rail-x);
   width: 1px;
   background:
     linear-gradient(180deg, rgba(213, 208, 199, 0.5), rgba(95, 81, 80, 0.12));
@@ -775,17 +778,17 @@
   display: grid;
   grid-template-columns: 88px minmax(0, 1fr);
   gap: 1rem;
-  margin-left: 2rem;
+  margin-left: var(--timeline-item-offset);
 }
 
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: -1.18rem;
+  left: calc(var(--timeline-rail-x) - var(--timeline-item-offset) - (var(--timeline-dot-size) / 2));
   top: 1.6rem;
   z-index: 2;
-  width: 0.8rem;
-  height: 0.8rem;
+  width: var(--timeline-dot-size);
+  height: var(--timeline-dot-size);
   border-radius: 999px;
   background: linear-gradient(135deg, #efe5d6, #8e8573);
   box-shadow: 0 0 16px rgba(230, 223, 213, 0.36);
@@ -1268,6 +1271,11 @@
     grid-template-columns: 1fr;
   }
 
+  .content-section-edge-right .education-layout {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
   .hero-copy h1 {
     max-width: 14ch;
   }
@@ -1381,22 +1389,51 @@
   }
 
   .timeline-item {
-    margin-left: 1.3rem;
+    margin-left: var(--timeline-item-offset);
     grid-template-columns: 1fr;
+    gap: 0.8rem;
+  }
+
+  .timeline-shell {
+    --timeline-rail-x: 0.4rem;
+    --timeline-item-offset: 1.3rem;
+    --timeline-dot-size: 0.72rem;
   }
 
   .timeline-shell::before {
-    left: 0.4rem;
+    left: var(--timeline-rail-x);
   }
 
   .timeline-item::before {
-    left: -0.62rem;
+    top: 1.15rem;
   }
 
   .portrait-card img,
   .education-card img,
   .project-image-wrap {
     height: 240px;
+  }
+
+  .education-copy h3,
+  .timeline-item h3 {
+    font-size: clamp(1.4rem, 7.4vw, 1.75rem);
+    line-height: 1.08;
+  }
+
+  .timeline-year {
+    justify-self: start;
+    width: fit-content;
+    padding: 0.55rem 0.72rem;
+    font-size: 0.82rem;
+  }
+
+  .coursework-list {
+    gap: 0.5rem;
+  }
+
+  .education-copy .soft-pill {
+    padding: 0.48rem 0.68rem;
+    font-size: 0.8rem;
   }
 
   .project-card {
