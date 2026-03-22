@@ -13,13 +13,16 @@ export default function AboutSection({ content }: AboutSectionProps) {
 
         <div className="about-layout">
           <article className="glass-panel portrait-card">
-            <img
-              src={content.image}
-              alt={content.imageAlt}
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-            />
+            <div className="portrait-media">
+              <span className="portrait-media-ring" aria-hidden="true" />
+              <img
+                src={content.image}
+                alt={content.imageAlt}
+                loading="lazy"
+                decoding="async"
+                fetchPriority="low"
+              />
+            </div>
             <div className="portrait-copy">
               <p className="portrait-kicker">{content.portraitKicker}</p>
               <h3>{content.portraitTitle}</h3>
@@ -29,8 +32,10 @@ export default function AboutSection({ content }: AboutSectionProps) {
 
           <div className="about-story">
             <article className="glass-panel story-card">
-              {content.story.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
+              {content.story.map((paragraph, index) => (
+                <p className={index === 0 ? "story-lead" : undefined} key={paragraph}>
+                  {paragraph}
+                </p>
               ))}
             </article>
 
