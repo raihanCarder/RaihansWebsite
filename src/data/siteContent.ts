@@ -5,7 +5,7 @@ import beaconPhoto from "../assets/beacon.png";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
 import seniCarePhoto from "../assets/senicare.png";
-import music4YouPhoto from "../assets/Music4YouLogo.png";
+import music4YouPhoto from "../assets/music4you.png";
 import ezFormPhoto from "../assets/ezFormPhoto.jpeg";
 import type {
   AboutSectionContent,
@@ -212,14 +212,13 @@ export const projectsSectionContent: ProjectsSectionContent = {
       summary:
         "Full-stack social music platform focused on rating, discovery, and connecting people through shared listening taste.",
       image: music4YouPhoto,
-      imageWidth: 768,
-      imageHeight: 768,
-      imageFit: "contain",
+      imageWidth: 1024,
+      imageHeight: 559,
       timeline: "Dec 2025 - Present",
       status: "In progress",
       skills: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL"],
       links: [
-        { label: "GitHub", href: "https://github.com/raihanCarder/ratemusic" },
+        { label: "Live Demo", href: "https://ratemusic.vercel.app" },
       ],
     },
     {
