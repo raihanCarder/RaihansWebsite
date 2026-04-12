@@ -77,22 +77,12 @@ export const educationSectionContent: EducationSectionContent = {
     {
       year: "2024",
       title: "Started the foundation",
-      body: "Began the HBSc Computer Science journey at the University of Toronto Scarborough with a focus on software engineering.",
-    },
-    {
-      year: "2025",
-      title: "Built engineering depth",
-      body: "Strengthened systems thinking through software design, software tools, and data structures coursework while building outside the classroom.",
-    },
-    {
-      year: "2026",
-      title: "Shipping real products",
-      body: "Turned hackathon ideas and side projects into polished software experiences across web, AI, and mobile.",
+      body: "Began the HBSc Computer Science journey at UofT Scarborough, building systems thinking through software design, data structures, and coursework while shipping real projects outside the classroom.",
     },
     {
       year: "2028",
       title: "Expected graduation",
-      body: "Working toward a co-op-driven path into software engineering roles where strong product thinking matters.",
+      body: "Working toward a co-op-driven path into software engineering roles, turning hackathon ideas and side projects into polished web, AI, and mobile experiences along the way.",
     },
   ],
 };

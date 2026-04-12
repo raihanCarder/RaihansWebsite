@@ -27,8 +27,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-  background:
-    linear-gradient(180deg, rgba(4, 6, 10, 0.98), rgba(5, 7, 11, 1));
+  background: #030304;
 }
 
 body,
