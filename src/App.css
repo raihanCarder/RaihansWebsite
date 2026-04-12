@@ -1420,6 +1420,10 @@
     grid-template-columns: 1fr;
   }
 
+  .project-card::before {
+    display: none;
+  }
+
   .content-section-edge-right .education-layout {
     grid-template-columns: 1fr;
     gap: 1rem;
