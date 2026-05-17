@@ -10,6 +10,8 @@ export type TimelineEntry = {
   body: string;
 };
 
+export type ProjectType = "hackathon" | "personal" | "coursework" | "award";
+
 export type Project = {
   title: string;
   category: string;
@@ -23,6 +25,7 @@ export type Project = {
   skills: string[];
   links: LinkItem[];
   award?: string;
+  projectType: ProjectType[];
 };
 
 export type IntroSectionContent = {

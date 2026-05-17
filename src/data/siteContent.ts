@@ -97,6 +97,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "EcoHome Studio",
       category: "AI Design",
+      projectType: ["hackathon"],
       summary:
         "Home design tool that takes a brief and generates a full concept with a sustainability score, interactive 3D model, and floor plan. Includes a Studio Mode to keep tweaking materials, roof type, and eco features after generation.",
       image: ecoHomePhoto,
@@ -127,6 +128,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "Beacon",
       category: "Community Support",
+      projectType: ["hackathon"],
       summary:
         "Location-aware support platform that helps people find trusted nearby services like food support, shelters, clinics, social services, and legal help, then builds longer-term stability plans with grounded AI workflows.",
       image: beaconPhoto,
@@ -159,6 +161,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "Argus",
       category: "GovTech",
+      projectType: ["hackathon"],
       summary:
         "GovTech intelligence platform that surfaces government opportunities before they become RFPs, then ranks the strongest startup matches with live signals and clear actions.",
       image: argusPhoto,
@@ -187,6 +190,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "SeniCare",
       category: "Healthcare",
+      projectType: ["hackathon", "award"],
       summary:
         "Senior-friendly remote check-in flow that combines conversational screening with camera-based biomarker signals to produce clinician-ready triage summaries.",
       image: seniCarePhoto,
@@ -212,6 +216,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "Smart Air",
       category: "Healthcare",
+      projectType: ["coursework"],
       summary:
         "Kid-friendly Android app for asthma education, inhaler practice, symptom logging, and parent-approved sharing with clinicians.",
       image: smartAirPhoto,
@@ -230,6 +235,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "Music4You",
       category: "Music Platform",
+      projectType: ["personal"],
       summary:
         "Full-stack social music platform focused on rating, discovery, and connecting people through shared listening taste.",
       image: music4YouPhoto,
@@ -245,6 +251,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
     {
       title: "Ez Form",
       category: "Accessibility",
+      projectType: ["hackathon"],
       summary:
         "Voice-first PDF form filling system that extracts fields, asks questions aloud, captures spoken responses, and generates a completed form.",
       image: ezFormPhoto,
