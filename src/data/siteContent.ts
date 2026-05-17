@@ -1,3 +1,4 @@
+import ecoHomePhoto from "../assets/echohome.jpg";
 import headerPhoto from "../assets/headerPhoto.jpeg";
 import uoftPhoto from "../assets/uoftSign.jpg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
@@ -93,6 +94,36 @@ export const projectsSectionContent: ProjectsSectionContent = {
   description:
     "I have built projects across community support, health, gov tech, and more personal spaces like music, with a mix of practical products, hackathon builds, and things made for enjoyment.",
   projects: [
+    {
+      title: "EcoHome Studio",
+      category: "AI Design",
+      summary:
+        "Home design tool that takes a brief and generates a full concept with a sustainability score, interactive 3D model, and floor plan. Includes a Studio Mode to keep tweaking materials, roof type, and eco features after generation.",
+      image: ecoHomePhoto,
+      imageWidth: 1200,
+      imageHeight: 649,
+      timeline: "May 2026",
+      status: "Hackathon build",
+      skills: [
+        "Next.js",
+        "TypeScript",
+        "React",
+        "Tailwind",
+        "Three.js",
+        "Langchain",
+        "Supabase",
+      ],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/kasimsuh/ecohome-studio",
+        },
+        {
+          label: "Devpost",
+          href: "https://devpost.com/software/ecohome-studio",
+        },
+      ],
+    },
     {
       title: "Beacon",
       category: "Community Support",

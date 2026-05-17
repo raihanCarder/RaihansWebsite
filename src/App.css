@@ -1036,15 +1036,15 @@
 .project-skill {
   position: relative;
   overflow: hidden;
-  min-height: 2.45rem;
-  padding: 0.62rem 0.98rem;
+  min-height: 1.75rem;
+  padding: 0.38rem 0.75rem;
   border-color: rgba(255, 255, 255, 0.12);
   border-radius: 999px;
   background:
     linear-gradient(180deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.035)),
     rgba(255, 255, 255, 0.02);
   color: rgba(244, 241, 236, 0.94);
-  font-size: 0.84rem;
+  font-size: 0.78rem;
   font-weight: 500;
   line-height: 1.1;
   letter-spacing: 0.01em;

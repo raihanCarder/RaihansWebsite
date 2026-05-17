@@ -87,6 +87,7 @@ const skillBadges: Record<string, SkillBadge> = {
   "Accessibility": { label: "accessibility", color: "4B8BBE", logo: "accessibility", logoColor: "white" },
   "Google Maps API": { label: "google%20maps", color: "4285F4", logo: "googlemaps", logoColor: "white" },
   "Brave Search API": { label: "brave", color: "FB542B", logo: "bravebrwoser", logoColor: "white" },
+  "Three.js": { label: "three.js", color: "000000", logo: "threedotjs", logoColor: "white" },
 };
 
 const getSkillBadgeUrl = (skill: string): string | null => {
