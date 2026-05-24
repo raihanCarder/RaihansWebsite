@@ -31,7 +31,6 @@ export default function ProjectsSection({ content }: ProjectsSectionProps) {
           <p className="section-tag">{content.tag}</p>
           <h2>{content.title}</h2>
         </div>
-        <p className="section-description">{content.description}</p>
       </div>
 
       <div className="projects-filter-bar">

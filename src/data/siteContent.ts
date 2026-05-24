@@ -1,6 +1,5 @@
 import ecoHomePhoto from "../assets/echohome.jpg";
 import headerPhoto from "../assets/headerPhoto.jpeg";
-import uoftPhoto from "../assets/uoftSign.jpg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
 import beaconPhoto from "../assets/beacon.png";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
@@ -36,63 +35,49 @@ export const introSectionContent: IntroSectionContent = {
 };
 
 export const aboutSectionContent: AboutSectionContent = {
-  tag: "About me",
-  title: "I Love Building Software.",
+  tag: "About me 🧑🏻‍💻",
+  title: "",
   image: headerPhoto,
   imageAlt: "Portrait of Raihan Carder",
-  portraitKicker: "Raihan Carder",
-  portraitTitle: "Aspiring Software Engineer",
-  portraitBody:
-    "I enjoy taking ideas from rough concept to something people can actually use. That usually means working across interface, logic, and systems until the product feels coherent end to end.",
-  story: [
-    "I am a Computer Science student at the University of Toronto specializing in Software Engineering. I care about software that looks refined on the surface and stays thoughtful under the hood.",
-    "My interests sit at the intersection of full-stack development, AI and machine learning, and mobile experiences. I like learning fast, building ambitiously, and working on products that make complexity feel simple.",
-  ],
-  valuesLabel: "What drives me",
+  name: "Raihan Carder",
+  role: "Student",
+  basedAt: "Toronto, Ontario",
+  school: "University of Toronto",
+  program: "Computer Science, Specializing in Software Engineering",
+  status: "Open to Fall and Winter 2026 Internships",
+  now: "Building and shipping side projects",
   focusAreas: [
-    "Full-stack product design",
-    "AI and machine learning",
-    "Mobile app development",
-    "Hackathons and fast iteration",
+    "full-stack development",
+    "software engineering",
+    "hackathons",
+    "creating software that inspires me and can be used by others",
   ],
-  valuesNote:
-    "Outside of tech, you will usually find me at the gym, reading, listening to music, or thinking about the next thing worth building.",
+  offHours:
+    "Outside of tech you will usually find me at the gym, reading, listening to music, or thinking about the next thing worth building.",
 };
 
 export const educationSectionContent: EducationSectionContent = {
-  tag: "Education",
-  title: "My Journey in Computer Science",
-  image: uoftPhoto,
-  imageAlt: "University of Toronto Scarborough campus",
+  tag: "Education 📚",
   school: "University of Toronto Scarborough",
   degree: "HBSc Computer Science (Co-op)",
-  specialization: "Specialization: Software Engineering",
-  graduation: "Expected graduation: 2028",
-  courseworkLabel: "Relevant Coursework",
+  specialization: "Software Engineering",
+  year: "3rd",
+  graduation: "Expected April 2028",
   coursework: [
-    "Software Design",
-    "Software Tools and Systems",
-    "Data Structures and Algorithms",
+    "software design",
+    "software tools and systems",
+    "data structures and algorithms",
   ],
-  timeline: [
-    {
-      year: "2024",
-      title: "Started the foundation",
-      body: "Began the HBSc Computer Science journey at UofT Scarborough, building systems thinking through software design, data structures, and coursework while shipping real projects outside the classroom.",
-    },
-    {
-      year: "2028",
-      title: "Expected graduation",
-      body: "Working toward a co-op-driven path into software engineering roles, turning hackathon ideas and side projects into polished web, AI, and mobile experiences along the way.",
-    },
-  ],
+  location: {
+    label: "UofT Scarborough",
+    lat: 43.7831,
+    lon: -79.1869,
+  },
 };
 
 export const projectsSectionContent: ProjectsSectionContent = {
   tag: "Projects",
   title: "My Favourites",
-  description:
-    "I have built projects across community support, health, gov tech, and more personal spaces like music, with a mix of practical products, hackathon builds, and things made for enjoyment.",
   projects: [
     {
       title: "EcoHome Studio",
@@ -244,9 +229,7 @@ export const projectsSectionContent: ProjectsSectionContent = {
       timeline: "Dec 2025 - Present",
       status: "In progress",
       skills: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL"],
-      links: [
-        { label: "Live Demo", href: "https://ratemusic.vercel.app" },
-      ],
+      links: [{ label: "Live Demo", href: "https://ratemusic.vercel.app" }],
     },
     {
       title: "Ez Form",

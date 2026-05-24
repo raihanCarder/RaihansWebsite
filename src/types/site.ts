@@ -4,12 +4,6 @@ export type LinkItem = {
   downloadFileName?: string;
 };
 
-export type TimelineEntry = {
-  year: string;
-  title: string;
-  body: string;
-};
-
 export type ProjectType = "hackathon" | "personal" | "coursework" | "award";
 
 export type Project = {
@@ -42,33 +36,35 @@ export type AboutSectionContent = {
   title: string;
   image: string;
   imageAlt: string;
-  portraitKicker: string;
-  portraitTitle: string;
-  portraitBody: string;
-  story: string[];
-  valuesLabel: string;
+  name: string;
+  role: string;
+  basedAt: string;
+  school: string;
+  program: string;
+  status: string;
+  now: string;
   focusAreas: string[];
-  valuesNote: string;
+  offHours: string;
 };
 
 export type EducationSectionContent = {
   tag: string;
-  title: string;
-  image: string;
-  imageAlt: string;
   school: string;
   degree: string;
   specialization: string;
+  year: string;
   graduation: string;
-  courseworkLabel: string;
   coursework: string[];
-  timeline: TimelineEntry[];
+  location: {
+    label: string;
+    lat: number;
+    lon: number;
+  };
 };
 
 export type ProjectsSectionContent = {
   tag: string;
   title: string;
-  description: string;
   projects: Project[];
 };
 

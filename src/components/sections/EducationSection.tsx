@@ -1,53 +1,71 @@
 import type { EducationSectionContent } from "../../types/site";
+import LocationGlobe from "../shared/LocationGlobe";
 import SectionHeading from "../shared/SectionHeading";
+import TermWindowBar from "../shared/TermWindowBar";
 
 type EducationSectionProps = {
   content: EducationSectionContent;
 };
 
-export default function EducationSection({
-  content,
-}: EducationSectionProps) {
+export default function EducationSection({ content }: EducationSectionProps) {
   return (
-    <section className="content-section content-section-edge content-section-edge-right deferred-section" id="education">
-      <div className="content-section-shell content-section-shell-education">
-        <SectionHeading tag={content.tag} title={content.title} />
+    <section
+      className="content-section content-section-edge content-section-edge-right deferred-section"
+      id="education"
+    >
+      <div className="content-section-shell content-section-shell-education edu-terminal">
+        <SectionHeading tag={content.tag} title="" />
 
-        <div className="education-layout">
-          <article className="glass-panel education-card">
-            <img
-              src={content.image}
-              alt={content.imageAlt}
-              loading="lazy"
-              decoding="async"
-              fetchPriority="low"
-            />
-            <div className="education-copy">
-              <p className="card-label">{content.school}</p>
-              <h3>{content.degree}</h3>
-              <p className="education-meta">{content.specialization}</p>
-              <p className="education-meta">{content.graduation}</p>
-              <p className="coursework-label">{content.courseworkLabel}</p>
-              <div className="coursework-list">
-                {content.coursework.map((course) => (
-                  <span className="soft-pill" key={course}>
-                    {course}
+        <div className="term-grid term-grid--edu">
+          <div className="term term--main" role="presentation">
+            <TermWindowBar title="raihan@portfolio: ~/edu" />
+            <div className="term-body">
+              <pre className="term-lines" aria-label="Education information">
+                <span className="term-host">visitor@raihan</span>
+                <span className="term-path"> ~/edu</span>
+                {"\n\n"}
+                <span className="term-prompt">$</span> school{"\n"}
+                <span className="term-out">{content.school.toLowerCase()}</span>
+                {"\n\n"}
+                <span className="term-prompt">$</span> degree{"\n"}
+                <span className="term-out">{content.degree.toLowerCase()}</span>
+                {"\n\n"}
+                <span className="term-prompt">$</span> specialization{"\n"}
+                <span className="term-out">{content.specialization.toLowerCase()}</span>
+                {"\n\n"}
+                <span className="term-prompt">$</span> year{"\n"}
+                <span className="term-out">{content.year.toLowerCase()}</span>
+                {"\n\n"}
+                <span className="term-prompt">$</span> graduation{"\n"}
+                <span className="term-out">{content.graduation.toLowerCase()}</span>
+                {"\n\n"}
+                <span className="term-prompt">$</span> ls relevant_coursework/{"\n"}
+                {content.coursework.map((course, i) => (
+                  <span className="term-li" key={course}>
+                    <span className="term-li-index">
+                      {String(i + 1).padStart(2, " ")}
+                    </span>
+                    {"  "}
+                    <span className="term-li-text">{course}</span>
+                    {"\n"}
                   </span>
                 ))}
-              </div>
+                {"\n"}
+                <span className="term-prompt">$</span>{" "}
+                <span className="term-cursor" aria-hidden="true" />
+              </pre>
             </div>
-          </article>
+          </div>
 
-          <div className="timeline-shell" aria-label="Education timeline">
-            {content.timeline.map((item) => (
-              <article className="glass-panel timeline-item" key={item.year}>
-                <span className="timeline-year">{item.year}</span>
-                <div>
-                  <h3>{item.title}</h3>
-                  <p>{item.body}</p>
-                </div>
-              </article>
-            ))}
+          <div className="term term--location" aria-label="Location on globe">
+            <TermWindowBar title="raihan@portfolio: ~/location" />
+            <div className="term-body term-body--media">
+              <LocationGlobe
+                lat={content.location.lat}
+                lon={content.location.lon}
+                label={content.location.label}
+              />
+            </div>
           </div>
         </div>
       </div>
