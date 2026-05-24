@@ -30,6 +30,77 @@
   overflow: clip;
 }
 
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -2;
+  background:
+    radial-gradient(
+      40rem 30rem at 85% 12%,
+      rgba(213, 208, 199, 0.08),
+      transparent 60%
+    ),
+    radial-gradient(
+      36rem 28rem at 12% 55%,
+      rgba(95, 81, 80, 0.1),
+      transparent 60%
+    ),
+    radial-gradient(
+      44rem 32rem at 55% 92%,
+      rgba(65, 60, 89, 0.1),
+      transparent 60%
+    );
+  filter: blur(40px);
+}
+
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background:
+    radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px);
+  background-size: 28px 28px;
+  mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    black 18%,
+    black 82%,
+    transparent 100%
+  );
+  -webkit-mask-image: linear-gradient(
+    180deg,
+    transparent 0,
+    black 18%,
+    black 82%,
+    transparent 100%
+  );
+  opacity: 0.5;
+}
+
+.content-section:first-of-type {
+  position: relative;
+}
+
+.content-section:first-of-type::before {
+  content: "";
+  position: absolute;
+  inset: -8rem 0 auto 0;
+  height: 14rem;
+  pointer-events: none;
+  z-index: 0;
+  background: linear-gradient(
+    180deg,
+    rgba(180, 178, 174, 0.12),
+    rgba(60, 58, 56, 0.06) 45%,
+    transparent
+  );
+  mix-blend-mode: screen;
+}
+
 .hero-panel {
   position: relative;
   min-height: 100svh;
