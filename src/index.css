@@ -1,43 +1,41 @@
 :root {
-  font-family: "Outfit", system-ui, sans-serif;
-  line-height: 1.6;
-  font-weight: 400;
-  color: #f5f4f0;
-  background:
-    radial-gradient(circle at top, rgba(142, 133, 115, 0.08), transparent 26%),
-    #05070b;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  color: #e9e9e7;
+  background: #191919;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 1.5rem;
-}
-
-*,
-*::before,
-*::after {
+* {
   box-sizing: border-box;
 }
 
-body {
-  margin: 0;
+html {
   min-width: 320px;
-  min-height: 100vh;
-  background: var(--surface-base);
+  min-height: 100%;
+  background: #191919;
 }
 
-body,
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  background: #191919;
+}
+
 button,
 a {
   -webkit-tap-highlight-color: transparent;
 }
 
-a {
-  color: inherit;
+button,
+input,
+textarea,
+select {
+  font: inherit;
 }
 
 img {
@@ -45,7 +43,12 @@ img {
   max-width: 100%;
 }
 
+:focus-visible {
+  outline: 2px solid #529cca;
+  outline-offset: 2px;
+}
+
 ::selection {
-  background: rgba(142, 133, 115, 0.28);
-  color: #faf8f3;
+  background: rgba(82, 156, 202, 0.32);
+  color: #ffffff;
 }

@@ -2,7 +2,9 @@ import ecoHomePhoto from "../assets/echohome.jpg";
 import headerPhoto from "../assets/headerPhoto.jpeg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
 import beaconPhoto from "../assets/beacon.png";
+import createUoftLogo from "../assets/Logo-Navy (Original).svg";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
+import rocketLogo from "../assets/rocket-logo.jpeg";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
 import seniCarePhoto from "../assets/Senicare.png";
 import music4YouPhoto from "../assets/music4you.png";
@@ -10,6 +12,7 @@ import ezFormPhoto from "../assets/ezFormPhoto.jpeg";
 import type {
   AboutSectionContent,
   EducationSectionContent,
+  ExperienceSectionContent,
   FooterSectionContent,
   IntroSectionContent,
   ProjectsSectionContent,
@@ -44,8 +47,8 @@ export const aboutSectionContent: AboutSectionContent = {
   basedAt: "Toronto, Ontario",
   school: "University of Toronto",
   program: "Computer Science, Specializing in Software Engineering",
-  status: "Open to Fall and Winter 2026 Internships",
-  now: "Building and shipping side projects",
+  status: "Incoming Software Developer Intern at Rocket Innovation Studio - Fall 2026",
+  now: "Backend developer for CodeClash at CREATE UofT",
   focusAreas: [
     "full-stack development",
     "software engineering",
@@ -73,6 +76,36 @@ export const educationSectionContent: EducationSectionContent = {
     lat: 43.7831,
     lon: -79.1869,
   },
+};
+
+export const experienceSectionContent: ExperienceSectionContent = {
+  tag: "Career timeline",
+  title: "Experience",
+  summary:
+    "My current and upcoming software engineering experience, from building CodeClash at UofT to joining Rocket Innovation Studio.",
+  experiences: [
+    {
+      company: "Rocket Innovation Studio",
+      role: "Software Developer Intern",
+      period: "Fall 2026",
+      status: "upcoming",
+      description:
+        "Joining Rocket Innovation Studio as a Software Developer Intern in Fall 2026.",
+      logo: rocketLogo,
+      logoAlt: "Rocket Innovation Studio logo",
+    },
+    {
+      company: "CREATE UofT",
+      role: "Tech Associate",
+      focus: "Backend Developer - CodeClash",
+      period: "April 2026 - Present",
+      status: "current",
+      description:
+        "Helping build the backend for CREATE UofT's CodeClash platform.",
+      logo: createUoftLogo,
+      logoAlt: "CREATE UofT logo",
+    },
+  ],
 };
 
 export const projectsSectionContent: ProjectsSectionContent = {
@@ -271,5 +304,6 @@ export const footerSectionContent: FooterSectionContent = {
   note: "Toronto-based computer science student designing polished software experiences across full-stack, AI, and mobile.",
   marquee: "Get in Touch",
   marqueeHref: "https://www.linkedin.com/in/raihan-carder/",
-  availability: "Open to internships, co-op, and ambitious product teams.",
+  availability:
+    "Incoming Software Developer Intern at Rocket Innovation Studio for Fall 2026.",
 };

@@ -68,6 +68,26 @@ export type ProjectsSectionContent = {
   projects: Project[];
 };
 
+export type ExperienceStatus = "current" | "upcoming";
+
+export type ExperienceItem = {
+  company: string;
+  role: string;
+  focus?: string;
+  period: string;
+  status: ExperienceStatus;
+  description: string;
+  logo: string;
+  logoAlt: string;
+};
+
+export type ExperienceSectionContent = {
+  tag: string;
+  title: string;
+  summary: string;
+  experiences: ExperienceItem[];
+};
+
 export type FooterSectionContent = {
   socials: LinkItem[];
   email: string;
