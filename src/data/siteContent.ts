@@ -4,7 +4,7 @@ import argusPhoto from "../assets/argus_dashboard.jpg";
 import beaconPhoto from "../assets/beacon.png";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
-import seniCarePhoto from "../assets/senicare.png";
+import seniCarePhoto from "../assets/Senicare.png";
 import music4YouPhoto from "../assets/music4you.png";
 import ezFormPhoto from "../assets/ezFormPhoto.jpeg";
 import type {
