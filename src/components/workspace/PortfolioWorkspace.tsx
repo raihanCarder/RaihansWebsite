@@ -116,7 +116,11 @@ export default function PortfolioWorkspace() {
     <div className="workspace">
       <aside className={`workspace-sidebar${isMenuOpen ? " is-open" : ""}`}>
         <div className="sidebar-header">
-          <a className="workspace-identity" href="#info" onClick={() => navigateTo("info")}>
+          <a
+            className="workspace-identity"
+            href="#info"
+            onClick={() => navigateTo("info")}
+          >
             <img src={headerPhoto} alt="" />
             <span>
               <strong>Raihan Carder</strong>
@@ -150,24 +154,33 @@ export default function PortfolioWorkspace() {
           ))}
 
           <p className="sidebar-label sidebar-label-secondary">Shortcuts</p>
-          <a className="sidebar-link" href={resumeLink.href} download={resumeLink.downloadFileName}>
+          <a
+            className="sidebar-link"
+            href={resumeLink.href}
+            download={resumeLink.downloadFileName}
+          >
             <Download aria-hidden="true" />
             <span>Resume</span>
           </a>
-          <a className="sidebar-link" href={githubLink.href} target="_blank" rel="noreferrer">
+          <a
+            className="sidebar-link"
+            href={githubLink.href}
+            target="_blank"
+            rel="noreferrer"
+          >
             <GitBranch aria-hidden="true" />
             <span>GitHub</span>
           </a>
-          <a className="sidebar-link" href={linkedinLink.href} target="_blank" rel="noreferrer">
+          <a
+            className="sidebar-link"
+            href={linkedinLink.href}
+            target="_blank"
+            rel="noreferrer"
+          >
             <ContactRound aria-hidden="true" />
             <span>LinkedIn</span>
           </a>
         </nav>
-
-        <div className="sidebar-status">
-          <span className="status-dot" aria-hidden="true" />
-          <p>{footerSectionContent.availability}</p>
-        </div>
       </aside>
 
       {isMenuOpen ? (
@@ -196,15 +209,25 @@ export default function PortfolioWorkspace() {
             <span>{activeConfig.label}</span>
           </div>
           <nav className="topbar-actions" aria-label="Quick links">
-            <a className="icon-button" href={githubLink.href} target="_blank" rel="noreferrer" aria-label="Open GitHub" title="GitHub">
+            <a
+              className="icon-button"
+              href={githubLink.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open GitHub"
+              title="GitHub"
+            >
               <GitBranch aria-hidden="true" />
             </a>
-            <a className="icon-button" href={linkedinLink.href} target="_blank" rel="noreferrer" aria-label="Open LinkedIn" title="LinkedIn">
+            <a
+              className="icon-button"
+              href={linkedinLink.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Open LinkedIn"
+              title="LinkedIn"
+            >
               <ContactRound aria-hidden="true" />
-            </a>
-            <a className="topbar-resume" href={resumeLink.href} download={resumeLink.downloadFileName}>
-              <Download aria-hidden="true" />
-              <span>Resume</span>
             </a>
           </nav>
         </header>
@@ -216,14 +239,20 @@ export default function PortfolioWorkspace() {
           {activePage === "experience" ? (
             <ExperiencePage content={experienceSectionContent} />
           ) : null}
-          {activePage === "school" ? <SchoolPage content={educationSectionContent} /> : null}
-          {activePage === "projects" ? <ProjectsPage content={projectsSectionContent} /> : null}
+          {activePage === "school" ? (
+            <SchoolPage content={educationSectionContent} />
+          ) : null}
+          {activePage === "projects" ? (
+            <ProjectsPage content={projectsSectionContent} />
+          ) : null}
           {activePage === "contact" ? (
-            <ContactPage intro={introSectionContent} footer={footerSectionContent} />
+            <ContactPage
+              intro={introSectionContent}
+              footer={footerSectionContent}
+            />
           ) : null}
         </main>
       </div>
-
     </div>
   );
 }

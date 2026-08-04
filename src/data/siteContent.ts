@@ -1,11 +1,12 @@
 import ecoHomePhoto from "../assets/echohome.jpg";
-import headerPhoto from "../assets/headerPhoto.jpeg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
 import beaconPhoto from "../assets/beacon.png";
+import checkInChampionsPhoto from "../assets/check-in-champions.jpg";
 import createUoftLogo from "../assets/Logo-Navy (Original).svg";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
 import rocketLogo from "../assets/rocket-logo.jpeg";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
+import torontoSkyline from "../assets/toronto-skyline.jpg";
 import seniCarePhoto from "../assets/Senicare.png";
 import music4YouPhoto from "../assets/music4you.png";
 import ezFormPhoto from "../assets/ezFormPhoto.jpeg";
@@ -40,23 +41,24 @@ export const introSectionContent: IntroSectionContent = {
 export const aboutSectionContent: AboutSectionContent = {
   tag: "About me 🧑🏻‍💻",
   title: "",
-  image: headerPhoto,
-  imageAlt: "Portrait of Raihan Carder",
+  image: torontoSkyline,
+  imageAlt: "Toronto skyline with the CN Tower at night",
   name: "Raihan Carder",
-  role: "Student",
+  role: "3rd year cs student",
   basedAt: "Toronto, Ontario",
   school: "University of Toronto",
   program: "Computer Science, Specializing in Software Engineering",
-  status: "Incoming Software Developer Intern at Rocket Innovation Studio - Fall 2026",
-  now: "Backend developer for CodeClash at CREATE UofT",
+  status:
+    "Incoming Software Developer Intern at Rocket Innovation Studio - Fall 2026",
+  now: "Completing my first semester of third year",
   focusAreas: [
     "full-stack development",
     "software engineering",
     "hackathons",
-    "creating software that inspires me and can be used by others",
+    "creating software that inspires me",
   ],
   offHours:
-    "Outside of tech you will usually find me at the gym, reading, listening to music, or thinking about the next thing worth building.",
+    "Outside of tech you will usually find me at the gym, reading, listening to music, or exploring the world with friends.",
 };
 
 export const educationSectionContent: EducationSectionContent = {
@@ -112,6 +114,43 @@ export const projectsSectionContent: ProjectsSectionContent = {
   tag: "Projects",
   title: "My Favourites",
   projects: [
+    {
+      title: "Check-In Champions",
+      category: "Gamified Travel",
+      projectType: ["hackathon", "award"],
+      summary:
+        "Gamified hotel discovery platform that turns live inventory into collectible football cards, destination packs, World Cup-style tournaments, multiplayer duels, and bookable recommendations with Gemini summaries and ElevenLabs match commentary.",
+      image: checkInChampionsPhoto,
+      imageWidth: 806,
+      imageHeight: 435,
+      timeline: "July 2026",
+      status: "Award winner",
+      skills: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Tailwind CSS",
+        "Prisma",
+        "PostgreSQL",
+        "Supabase",
+        "Auth0",
+        "Stripe",
+        "Stay22 API",
+        "Gemini API",
+        "ElevenLabs",
+      ],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/raihanCarder/hackthe6ix",
+        },
+        {
+          label: "Devpost",
+          href: "https://devpost.com/software/check-in-champions",
+        },
+      ],
+      award: "Won Stay22: Peak Unhinged Big Brain Use of the Stay22 API",
+    },
     {
       title: "EcoHome Studio",
       category: "AI Design",
@@ -259,10 +298,15 @@ export const projectsSectionContent: ProjectsSectionContent = {
       image: music4YouPhoto,
       imageWidth: 1024,
       imageHeight: 559,
-      timeline: "Dec 2025 - Present",
-      status: "In progress",
+      timeline: "Dec 2025 - Apr 2026",
+      status: "Completed",
       skills: ["Next.js", "React", "TypeScript", "Supabase", "PostgreSQL"],
-      links: [{ label: "Live Demo", href: "https://ratemusic.vercel.app" }],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/raihanCarder/MusicForYou",
+        },
+      ],
     },
     {
       title: "Ez Form",

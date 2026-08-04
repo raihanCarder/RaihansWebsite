@@ -16,7 +16,7 @@
   --blue-soft: rgba(82, 156, 202, 0.16);
   --green: #4dab9a;
   --green-soft: rgba(77, 171, 154, 0.14);
-  --yellow: #cb912f;
+  --icon-accent: #4ab1ff;
   --yellow-soft: rgba(203, 145, 47, 0.14);
   --page-width: 860px;
   --page-wide: 1160px;
@@ -179,7 +179,7 @@
 }
 
 .sidebar-link.is-active svg {
-  color: var(--yellow);
+  color: var(--icon-accent);
 }
 
 .sidebar-status {
@@ -315,6 +315,16 @@
   object-fit: cover;
 }
 
+.info-page .page-cover {
+  height: 320px;
+  background: #000000;
+}
+
+.info-page .page-cover img {
+  object-fit: cover;
+  object-position: center 50%;
+}
+
 .page-cover-shade {
   position: absolute;
   inset: 0;
@@ -348,12 +358,13 @@
   display: flex;
   width: 66px;
   height: 66px;
+  overflow: hidden;
   align-items: center;
   justify-content: center;
   border: 1px solid var(--border);
   border-radius: 7px;
   background: var(--surface-raised);
-  color: var(--yellow);
+  color: var(--icon-accent);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.24);
 }
 
@@ -361,6 +372,14 @@
   width: 34px;
   height: 34px;
   stroke-width: 1.65;
+}
+
+.page-icon img {
+  width: 100%;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: 50% 25%;
 }
 
 .page-eyebrow {
@@ -418,7 +437,7 @@
   flex: 0 0 auto;
   align-items: center;
   justify-content: center;
-  color: var(--yellow);
+  color: var(--icon-accent);
 }
 
 .callout-icon svg {
@@ -533,8 +552,12 @@
 }
 
 .status-tag {
-  background: var(--green-soft);
-  color: #8bc8bd;
+  min-height: 0;
+  padding: 0;
+  background: transparent;
+  color: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
 .tag-blue {
@@ -737,8 +760,10 @@
 }
 
 .project-gallery-card {
+  display: flex;
   min-width: 0;
   overflow: hidden;
+  flex-direction: column;
   border: 1px solid var(--border);
   border-radius: 7px;
   background: var(--surface-subtle);
@@ -764,7 +789,9 @@
 }
 
 .project-card-body {
-  display: grid;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
   gap: 0.85rem;
   padding: 0.9rem;
 }
@@ -848,6 +875,7 @@
   height: 15px;
   flex: 0 0 auto;
   margin-top: 0.05rem;
+  color: var(--icon-accent);
 }
 
 .project-skills {
@@ -867,7 +895,8 @@
   display: flex;
   flex-wrap: wrap;
   gap: 0.35rem;
-  padding-top: 0.2rem;
+  margin-top: auto;
+  padding-top: 0.65rem;
 }
 
 .project-links a {
@@ -1150,6 +1179,10 @@
   .page-cover {
     height: 225px;
   }
+
+  .info-page .page-cover {
+    height: 240px;
+  }
 }
 
 @media (max-width: 640px) {
@@ -1174,6 +1207,10 @@
 
   .page-cover {
     height: 185px;
+  }
+
+  .info-page .page-cover {
+    height: 210px;
   }
 
   .page-icon {

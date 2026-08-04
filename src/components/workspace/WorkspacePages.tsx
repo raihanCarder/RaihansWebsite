@@ -17,10 +17,10 @@ import {
   Info,
   Mail,
   MapPin,
-  Sparkles,
   type LucideIcon,
 } from "lucide-react";
 import uoftSign from "../../assets/uoftSign.jpg";
+import profilePhoto from "../../assets/profile-photo.jpg";
 import type {
   AboutSectionContent,
   EducationSectionContent,
@@ -35,6 +35,8 @@ import type {
 
 type PageHeaderProps = {
   icon: LucideIcon;
+  iconImage?: string;
+  iconImageAlt?: string;
   eyebrow: string;
   title: string;
   subtitle: string;
@@ -46,6 +48,8 @@ type PageHeaderProps = {
 
 function PageHeader({
   icon: Icon,
+  iconImage,
+  iconImageAlt = "",
   eyebrow,
   title,
   subtitle,
@@ -58,13 +62,21 @@ function PageHeader({
     <header className={`page-header${cover ? " has-cover" : ""}`}>
       {cover ? (
         <div className="page-cover">
-          <img src={cover} alt={coverAlt} style={{ objectPosition: coverPosition }} />
+          <img
+            src={cover}
+            alt={coverAlt}
+            style={{ objectPosition: coverPosition }}
+          />
           <span className="page-cover-shade" aria-hidden="true" />
         </div>
       ) : null}
       <div className={`page-header-inner${wide ? " page-width-wide" : ""}`}>
-        <div className="page-icon" aria-hidden="true">
-          <Icon />
+        <div className="page-icon">
+          {iconImage ? (
+            <img src={iconImage} alt={iconImageAlt} />
+          ) : (
+            <Icon aria-hidden="true" />
+          )}
         </div>
         <p className="page-eyebrow">{eyebrow}</p>
         <h1 tabIndex={-1}>{title}</h1>
@@ -74,7 +86,13 @@ function PageHeader({
   );
 }
 
-function PropertyRow({ label, children }: { label: string; children: ReactNode }) {
+function PropertyRow({
+  label,
+  children,
+}: {
+  label: string;
+  children: ReactNode;
+}) {
   return (
     <div className="property-row">
       <dt>{label}</dt>
@@ -84,7 +102,9 @@ function PropertyRow({ label, children }: { label: string; children: ReactNode }
 }
 
 const externalProps = (href: string) =>
-  href.startsWith("http") ? ({ target: "_blank", rel: "noreferrer" } as const) : {};
+  href.startsWith("http")
+    ? ({ target: "_blank", rel: "noreferrer" } as const)
+    : {};
 
 const renderLinkIcon = (link: LinkItem) => {
   const value = `${link.label} ${link.href}`.toLowerCase();
@@ -122,29 +142,20 @@ type InfoPageProps = {
 
 export function InfoPage({ intro, about }: InfoPageProps) {
   return (
-    <article className="workspace-page">
+    <article className="workspace-page info-page">
       <PageHeader
         icon={CircleUserRound}
+        iconImage={profilePhoto}
+        iconImageAlt="Raihan Carder"
         eyebrow={intro.kicker}
         title={about.name}
         subtitle={intro.summary}
         cover={about.image}
         coverAlt={about.imageAlt}
-        coverPosition="50% 38%"
+        coverPosition="center center"
       />
 
       <div className="page-body">
-        <section className="notion-callout" aria-labelledby="info-introduction">
-          <span className="callout-icon" aria-hidden="true"><Sparkles /></span>
-          <div>
-            <h2 id="info-introduction">Hello, I'm Raihan.</h2>
-            <p>
-              I'm a computer science student focused on software engineering and building
-              useful full-stack, AI, and mobile products.
-            </p>
-          </div>
-        </section>
-
         <section className="page-section" aria-labelledby="info-overview">
           <div className="section-title-row">
             <Info aria-hidden="true" />
@@ -153,11 +164,16 @@ export function InfoPage({ intro, about }: InfoPageProps) {
           <dl className="property-list">
             <PropertyRow label="Role">{about.role}</PropertyRow>
             <PropertyRow label="Based in">
-              <span className="property-with-icon"><MapPin aria-hidden="true" />{about.basedAt}</span>
+              <span className="property-with-icon">
+                <MapPin aria-hidden="true" />
+                {about.basedAt}
+              </span>
             </PropertyRow>
             <PropertyRow label="School">{about.school}</PropertyRow>
             <PropertyRow label="Program">{about.program}</PropertyRow>
-            <PropertyRow label="Status"><span className="status-tag">{about.status}</span></PropertyRow>
+            <PropertyRow label="Status">
+              <span className="status-tag">{about.status}</span>
+            </PropertyRow>
             <PropertyRow label="Now">{about.now}</PropertyRow>
           </dl>
         </section>
@@ -170,7 +186,10 @@ export function InfoPage({ intro, about }: InfoPageProps) {
             </div>
             <ul className="check-list">
               {about.focusAreas.map((area) => (
-                <li key={area}><Check aria-hidden="true" /><span>{area}</span></li>
+                <li key={area}>
+                  <Check aria-hidden="true" />
+                  <span>{area}</span>
+                </li>
               ))}
             </ul>
           </section>
@@ -190,7 +209,9 @@ export function InfoPage({ intro, about }: InfoPageProps) {
             <h2 id="info-links">Find me online</h2>
           </div>
           <div className="notion-link-list">
-            {intro.links.map((link) => <LinkRow link={link} key={link.label} />)}
+            {intro.links.map((link) => (
+              <LinkRow link={link} key={link.label} />
+            ))}
           </div>
         </section>
       </div>
@@ -198,7 +219,11 @@ export function InfoPage({ intro, about }: InfoPageProps) {
   );
 }
 
-export function ExperiencePage({ content }: { content: ExperienceSectionContent }) {
+export function ExperiencePage({
+  content,
+}: {
+  content: ExperienceSectionContent;
+}) {
   return (
     <article className="workspace-page experience-page">
       <PageHeader
@@ -234,35 +259,30 @@ export function ExperiencePage({ content }: { content: ExperienceSectionContent 
                   <div className="experience-copy">
                     <div className="experience-heading">
                       <div>
-                        <p className="experience-company">{experience.company}</p>
+                        <p className="experience-company">
+                          {experience.company}
+                        </p>
                         <h3>{experience.role}</h3>
                         {experience.focus ? (
                           <p className="experience-focus">{experience.focus}</p>
                         ) : null}
                       </div>
-                      <span className={`experience-status experience-status--${experience.status}`}>
-                        {experience.status === "current" ? "Current" : "Upcoming"}
+                      <span
+                        className={`experience-status experience-status--${experience.status}`}
+                      >
+                        {experience.status === "current"
+                          ? "Current"
+                          : "Upcoming"}
                       </span>
                     </div>
-                    <p className="experience-description">{experience.description}</p>
+                    <p className="experience-description">
+                      {experience.description}
+                    </p>
                   </div>
                 </article>
               </li>
             ))}
           </ol>
-        </section>
-
-        <section className="notion-callout experience-callout" aria-label="Current experience summary">
-          <span className="callout-icon callout-icon-green" aria-hidden="true">
-            <BriefcaseBusiness />
-          </span>
-          <div>
-            <h2>Right now</h2>
-            <p>
-              Building CodeClash at CREATE UofT before joining Rocket Innovation Studio in
-              Fall 2026.
-            </p>
-          </div>
         </section>
       </div>
     </article>
@@ -291,11 +311,16 @@ export function SchoolPage({ content }: { content: EducationSectionContent }) {
           <dl className="property-list">
             <PropertyRow label="Institution">{content.school}</PropertyRow>
             <PropertyRow label="Degree">{content.degree}</PropertyRow>
-            <PropertyRow label="Specialization"><span className="tag tag-blue">{content.specialization}</span></PropertyRow>
+            <PropertyRow label="Specialization">
+              <span className="tag tag-blue">{content.specialization}</span>
+            </PropertyRow>
             <PropertyRow label="Current year">{content.year}</PropertyRow>
             <PropertyRow label="Graduation">{content.graduation}</PropertyRow>
             <PropertyRow label="Campus">
-              <span className="property-with-icon"><MapPin aria-hidden="true" />{content.location.label}</span>
+              <span className="property-with-icon">
+                <MapPin aria-hidden="true" />
+                {content.location.label}
+              </span>
             </PropertyRow>
           </dl>
         </section>
@@ -315,11 +340,19 @@ export function SchoolPage({ content }: { content: EducationSectionContent }) {
           </div>
         </section>
 
-        <section className="notion-callout location-callout" aria-label="Campus coordinates">
-          <span className="callout-icon callout-icon-blue" aria-hidden="true"><MapPin /></span>
+        <section
+          className="notion-callout location-callout"
+          aria-label="Campus coordinates"
+        >
+          <span className="callout-icon callout-icon-blue" aria-hidden="true">
+            <MapPin />
+          </span>
           <div>
             <h2>{content.location.label}</h2>
-            <p>{content.location.lat.toFixed(4)}° N, {Math.abs(content.location.lon).toFixed(4)}° W</p>
+            <p>
+              {content.location.lat.toFixed(4)}° N,{" "}
+              {Math.abs(content.location.lon).toFixed(4)}° W
+            </p>
           </div>
         </section>
       </div>
@@ -357,7 +390,9 @@ function ProjectGalleryCard({ project }: { project: Project }) {
       </div>
       <div className="project-card-body">
         <div className="project-heading">
-          <span className="project-page-icon" aria-hidden="true"><Code2 /></span>
+          <span className="project-page-icon" aria-hidden="true">
+            <Code2 />
+          </span>
           <div>
             <h2>{project.title}</h2>
             <p>{project.category}</p>
@@ -378,15 +413,26 @@ function ProjectGalleryCard({ project }: { project: Project }) {
         ) : null}
 
         <div className="project-skills" aria-label="Technologies used">
-          {project.skills.map((skill) => <span className="tag tag-skill" key={skill}>{skill}</span>)}
+          {project.skills.map((skill) => (
+            <span className="tag tag-skill" key={skill}>
+              {skill}
+            </span>
+          ))}
         </div>
 
         {project.links.length ? (
           <div className="project-links">
             {project.links.map((link) => {
               return (
-                <a href={link.href} target="_blank" rel="noreferrer" key={link.label}>
-                  <span aria-hidden="true">{renderProjectLinkIcon(link.label)}</span>
+                <a
+                  href={link.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  key={link.label}
+                >
+                  <span aria-hidden="true">
+                    {renderProjectLinkIcon(link.label)}
+                  </span>
                   <span>{link.label}</span>
                 </a>
               );
@@ -401,9 +447,12 @@ function ProjectGalleryCard({ project }: { project: Project }) {
 export function ProjectsPage({ content }: { content: ProjectsSectionContent }) {
   const [activeFilter, setActiveFilter] = useState<FilterKey>("all");
   const visibleProjects = useMemo(
-    () => activeFilter === "all"
-      ? content.projects
-      : content.projects.filter((project) => project.projectType.includes(activeFilter)),
+    () =>
+      activeFilter === "all"
+        ? content.projects
+        : content.projects.filter((project) =>
+            project.projectType.includes(activeFilter),
+          ),
     [activeFilter, content.projects],
   );
 
@@ -469,13 +518,18 @@ export function ContactPage({ intro, footer }: ContactPageProps) {
       <PageHeader
         icon={Mail}
         eyebrow="Contact"
-        title="Let's build something useful."
+        title="Let's build something meaningful."
         subtitle={footer.availability}
       />
 
       <div className="page-body">
-        <section className="notion-callout contact-callout" aria-labelledby="contact-email">
-          <span className="callout-icon callout-icon-green" aria-hidden="true"><Mail /></span>
+        <section
+          className="notion-callout contact-callout"
+          aria-labelledby="contact-email"
+        >
+          <span className="callout-icon callout-icon-green" aria-hidden="true">
+            <Mail />
+          </span>
           <div>
             <h2 id="contact-email">The easiest way to reach me</h2>
             <a href={`mailto:${footer.email}`}>{footer.email}</a>
@@ -498,13 +552,19 @@ export function ContactPage({ intro, footer }: ContactPageProps) {
           </div>
         </section>
 
-        <section className="page-section contact-note" aria-labelledby="contact-note">
+        <section
+          className="page-section contact-note"
+          aria-labelledby="contact-note"
+        >
           <div className="section-title-row">
             <Info aria-hidden="true" />
             <h2 id="contact-note">A little context</h2>
           </div>
           <p className="section-copy">{footer.note}</p>
-          <span className="contact-location"><MapPin aria-hidden="true" />Toronto, Ontario</span>
+          <span className="contact-location">
+            <MapPin aria-hidden="true" />
+            Toronto, Ontario
+          </span>
         </section>
 
         <footer className="page-footer">
