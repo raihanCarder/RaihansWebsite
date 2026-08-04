@@ -34,13 +34,9 @@ export const introSectionContent: IntroSectionContent = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raihan-carder/" },
     { label: "Email", href: "mailto:raihancarder@gmail.com" },
   ],
-  scrollLabel: "Scroll",
-  scrollText: "Down to explore",
 };
 
 export const aboutSectionContent: AboutSectionContent = {
-  tag: "About me 🧑🏻‍💻",
-  title: "",
   image: torontoSkyline,
   imageAlt: "Toronto skyline with the CN Tower at night",
   name: "Raihan Carder",
@@ -62,7 +58,6 @@ export const aboutSectionContent: AboutSectionContent = {
 };
 
 export const educationSectionContent: EducationSectionContent = {
-  tag: "Education 📚",
   school: "University of Toronto Scarborough",
   degree: "HBSc Computer Science (Co-op)",
   specialization: "Software Engineering",
@@ -339,15 +334,7 @@ export const footerSectionContent: FooterSectionContent = {
   ],
   email: "raihancarder@gmail.com",
   brand: "Raihan Carder",
-  nav: [
-    { label: "Home", href: "#top" },
-    { label: "About", href: "#about" },
-    { label: "Education", href: "#education" },
-    { label: "Projects", href: "#projects" },
-  ],
   note: "Toronto-based computer science student designing polished software experiences across full-stack, AI, and mobile.",
-  marquee: "Get in Touch",
-  marqueeHref: "https://www.linkedin.com/in/raihan-carder/",
   availability:
     "Incoming Software Developer Intern at Rocket Innovation Studio for Fall 2026.",
 };

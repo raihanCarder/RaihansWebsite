@@ -13,7 +13,6 @@ export type Project = {
   image: string;
   imageWidth: number;
   imageHeight: number;
-  imageFit?: "cover" | "contain";
   timeline: string;
   status: string;
   skills: string[];
@@ -27,13 +26,9 @@ export type IntroSectionContent = {
   name: string;
   summary: string;
   links: LinkItem[];
-  scrollLabel: string;
-  scrollText: string;
 };
 
 export type AboutSectionContent = {
-  tag: string;
-  title: string;
   image: string;
   imageAlt: string;
   name: string;
@@ -48,7 +43,6 @@ export type AboutSectionContent = {
 };
 
 export type EducationSectionContent = {
-  tag: string;
   school: string;
   degree: string;
   specialization: string;
@@ -92,9 +86,6 @@ export type FooterSectionContent = {
   socials: LinkItem[];
   email: string;
   brand: string;
-  nav: LinkItem[];
   note: string;
-  marquee: string;
-  marqueeHref: string;
   availability: string;
 };

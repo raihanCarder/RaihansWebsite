@@ -182,32 +182,6 @@
   color: var(--icon-accent);
 }
 
-.sidebar-status {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.65rem;
-  margin: 0.55rem;
-  padding: 0.75rem;
-  border-top: 1px solid var(--border-soft);
-  color: var(--text-muted);
-}
-
-.sidebar-status p {
-  margin: 0;
-  font-size: 0.72rem;
-  line-height: 1.45;
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  flex: 0 0 auto;
-  margin-top: 0.27rem;
-  border-radius: 50%;
-  background: var(--green);
-  box-shadow: 0 0 0 3px var(--green-soft);
-}
-
 .workspace-main {
   display: flex;
   height: 100svh;
@@ -254,31 +228,6 @@
 
 .topbar-actions {
   gap: 0.15rem;
-}
-
-.topbar-resume {
-  display: inline-flex;
-  min-height: 34px;
-  align-items: center;
-  gap: 0.45rem;
-  margin-left: 0.3rem;
-  padding: 0 0.7rem;
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  background: var(--surface-raised);
-  color: var(--text-primary);
-  font-size: 0.78rem;
-  font-weight: 600;
-  text-decoration: none;
-}
-
-.topbar-resume:hover {
-  background: var(--surface-hover);
-}
-
-.topbar-resume svg {
-  width: 15px;
-  height: 15px;
 }
 
 .mobile-menu-button {
@@ -418,57 +367,6 @@
   display: grid;
   gap: 2.25rem;
   padding-top: 2.6rem;
-}
-
-.notion-callout {
-  display: flex;
-  align-items: flex-start;
-  gap: 0.9rem;
-  padding: 1rem 1.1rem;
-  border: 1px solid var(--border-soft);
-  border-radius: 6px;
-  background: var(--yellow-soft);
-}
-
-.callout-icon {
-  display: inline-flex;
-  width: 28px;
-  height: 28px;
-  flex: 0 0 auto;
-  align-items: center;
-  justify-content: center;
-  color: var(--icon-accent);
-}
-
-.callout-icon svg {
-  width: 21px;
-  height: 21px;
-  stroke-width: 1.8;
-}
-
-.callout-icon-blue {
-  color: var(--blue);
-}
-
-.callout-icon-green {
-  color: var(--green);
-}
-
-.notion-callout h2,
-.notion-callout p {
-  margin: 0;
-}
-
-.notion-callout h2 {
-  font-size: 0.98rem;
-  font-weight: 650;
-}
-
-.notion-callout p {
-  margin-top: 0.3rem;
-  color: var(--text-secondary);
-  font-size: 0.9rem;
-  line-height: 1.6;
 }
 
 .page-section {
@@ -694,10 +592,6 @@
   font-size: 0.88rem;
   font-weight: 500;
   text-transform: capitalize;
-}
-
-.location-callout {
-  background: var(--blue-soft);
 }
 
 .project-toolbar {
@@ -1087,25 +981,8 @@
   line-height: 1.65;
 }
 
-.experience-callout {
-  background: var(--green-soft);
-}
-
 .contact-page .page-header-inner {
   padding-top: 5.5rem;
-}
-
-.contact-callout {
-  background: var(--green-soft);
-}
-
-.contact-callout a {
-  display: inline-block;
-  margin-top: 0.28rem;
-  color: #8bc8bd;
-  font-size: 0.92rem;
-  text-underline-offset: 3px;
-  overflow-wrap: anywhere;
 }
 
 .contact-location {
