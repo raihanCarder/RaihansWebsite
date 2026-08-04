@@ -339,22 +339,6 @@ export function SchoolPage({ content }: { content: EducationSectionContent }) {
             ))}
           </div>
         </section>
-
-        <section
-          className="notion-callout location-callout"
-          aria-label="Campus coordinates"
-        >
-          <span className="callout-icon callout-icon-blue" aria-hidden="true">
-            <MapPin />
-          </span>
-          <div>
-            <h2>{content.location.label}</h2>
-            <p>
-              {content.location.lat.toFixed(4)}° N,{" "}
-              {Math.abs(content.location.lon).toFixed(4)}° W
-            </p>
-          </div>
-        </section>
       </div>
     </article>
   );
