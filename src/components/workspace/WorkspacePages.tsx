@@ -507,19 +507,6 @@ export function ContactPage({ intro, footer }: ContactPageProps) {
       />
 
       <div className="page-body">
-        <section
-          className="notion-callout contact-callout"
-          aria-labelledby="contact-email"
-        >
-          <span className="callout-icon callout-icon-green" aria-hidden="true">
-            <Mail />
-          </span>
-          <div>
-            <h2 id="contact-email">The easiest way to reach me</h2>
-            <a href={`mailto:${footer.email}`}>{footer.email}</a>
-          </div>
-        </section>
-
         <section className="page-section" aria-labelledby="contact-links">
           <div className="section-title-row">
             <Globe2 aria-hidden="true" />
