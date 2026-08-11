@@ -247,6 +247,10 @@
   padding-bottom: 4rem;
 }
 
+.info-page {
+  padding-bottom: 1.5rem;
+}
+
 .page-header {
   position: relative;
 }
@@ -525,6 +529,21 @@
 
 .notion-link-row:hover {
   background: var(--surface-subtle);
+}
+
+.info-credit {
+  color: var(--text-muted);
+  font-size: 0.72rem;
+  line-height: 1.6;
+}
+
+.info-credit a {
+  color: inherit;
+  text-underline-offset: 0.15em;
+}
+
+.info-credit a:hover {
+  color: var(--text-secondary);
 }
 
 .link-row-icon {

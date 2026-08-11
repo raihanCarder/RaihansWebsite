@@ -214,6 +214,14 @@ export function InfoPage({ intro, about }: InfoPageProps) {
             ))}
           </div>
         </section>
+
+        <footer className="info-credit">
+          This site was heavily Inspired by{" "}
+          <a href="https://www.notion.com/" target="_blank" rel="noreferrer">
+            Notion!
+          </a>{" "}
+          I thank you for carrying my university life.
+        </footer>
       </div>
     </article>
   );
