@@ -90,15 +90,14 @@ export const experienceSectionContent: ExperienceSectionContent = {
       role: "Software Developer Intern",
       period: "Sep 2026 - Present",
       status: "current",
-      description:
-        "Working as a Software Developer Intern at Rocket Innovation Studio.",
+      description: "Building, shipping, and designing software @ Rocket 🚀",
       logo: rocketLogo,
       logoAlt: "Rocket Innovation Studio logo",
     },
     {
       company: "CREATE UofT",
       role: "Tech Associate",
-      focus: "Backend Developer - CodeClash",
+      focus: "",
       period: "April 2026 - Present",
       status: "current",
       description:
@@ -341,5 +340,5 @@ export const footerSectionContent: FooterSectionContent = {
   brand: "Raihan Carder",
   note: "Toronto-based computer science student designing polished software experiences across full-stack, AI, and mobile.",
   availability:
-    "Working as a Software Developer Intern at Rocket Innovation Studio. Looking for Winter 2028 and Summer 2028 internships.",
+    "Currently, I'm working as a Software Developer Intern at Rocket Innovation Studio. I'm looking for Winter 2028 and Summer 2028 internships.",
 };

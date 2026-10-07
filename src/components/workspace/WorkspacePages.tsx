@@ -22,6 +22,7 @@ import {
 import uoftSign from "../../assets/uoftSign.jpg";
 import profilePhoto from "../../assets/profile-photo.jpg";
 import londonBackground from "../../assets/londonbackground.jpeg";
+import asciiSignature from "../../assets/raihan-carder-ascii.png";
 import type {
   AboutSectionContent,
   EducationSectionContent,
@@ -547,15 +548,17 @@ export function ContactPage({ intro, footer }: ContactPageProps) {
           className="page-section contact-note"
           aria-labelledby="contact-note"
         >
-          <div className="section-title-row">
-            <Info aria-hidden="true" />
-            <h2 id="contact-note">A little context</h2>
-          </div>
+          <h2 id="contact-note" className="contact-signature-heading">
+            Raihan Carder
+          </h2>
+          <img
+            className="contact-signature"
+            src={asciiSignature}
+            alt="Raihan Carder"
+            width={1577}
+            height={205}
+          />
           <p className="section-copy">{footer.note}</p>
-          <span className="contact-location">
-            <MapPin aria-hidden="true" />
-            Toronto, Ontario
-          </span>
         </section>
 
         <footer className="page-footer">
