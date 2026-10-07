@@ -32,6 +32,7 @@ export const introSectionContent: IntroSectionContent = {
     },
     { label: "GitHub", href: "https://github.com/raihanCarder" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raihan-carder/" },
+    { label: "Devpost", href: "https://devpost.com/raihancarder" },
     { label: "Email", href: "mailto:raihancarder@gmail.com" },
   ],
 };
@@ -333,6 +334,7 @@ export const footerSectionContent: FooterSectionContent = {
   socials: [
     { label: "GitHub", href: "https://github.com/raihanCarder" },
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raihan-carder/" },
+    { label: "Devpost", href: "https://devpost.com/raihancarder" },
     { label: "Email", href: "mailto:raihancarder@gmail.com" },
   ],
   email: "raihancarder@gmail.com",
