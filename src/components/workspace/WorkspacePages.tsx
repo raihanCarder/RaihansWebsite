@@ -21,6 +21,7 @@ import {
 } from "lucide-react";
 import uoftSign from "../../assets/uoftSign.jpg";
 import profilePhoto from "../../assets/profile-photo.jpg";
+import londonBackground from "../../assets/londonbackground.jpeg";
 import type {
   AboutSectionContent,
   EducationSectionContent,
@@ -520,6 +521,9 @@ export function ContactPage({ intro, footer }: ContactPageProps) {
         eyebrow="Contact"
         title="Let's build something meaningful."
         subtitle={footer.availability}
+        cover={londonBackground}
+        coverAlt="Tower Bridge in London at night"
+        coverPosition="75% 60%"
       />
 
       <div className="page-body">

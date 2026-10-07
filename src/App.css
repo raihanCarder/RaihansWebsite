@@ -1000,7 +1000,7 @@
   line-height: 1.65;
 }
 
-.contact-page .page-header-inner {
+.contact-page .page-header:not(.has-cover) .page-header-inner {
   padding-top: 5.5rem;
 }
 
@@ -1159,7 +1159,7 @@
     transform: none;
   }
 
-  .contact-page .page-header-inner {
+  .contact-page .page-header:not(.has-cover) .page-header-inner {
     padding-top: 4rem;
   }
 
