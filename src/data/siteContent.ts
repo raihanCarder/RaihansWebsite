@@ -54,7 +54,7 @@ export const aboutSectionContent: AboutSectionContent = {
     "creating software that inspires me",
   ],
   offHours:
-    "Outside of tech you will usually find me at the gym, reading, listening to music, or exploring the world with friends.",
+    "Outside of tech you will usually find me at the gym, bouldering, reading, listening to music, or exploring the world with friends.",
 };
 
 export const educationSectionContent: EducationSectionContent = {
