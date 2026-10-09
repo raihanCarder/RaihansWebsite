@@ -22,6 +22,7 @@ import {
 import uoftSign from "../../assets/uoftSign.jpg";
 import profilePhoto from "../../assets/profile-photo.jpg";
 import londonBackground from "../../assets/londonbackground.jpeg";
+import experienceBanner from "../../assets/experience-banner.webp";
 import asciiSignature from "../../assets/raihan-carder-ascii.png";
 import type {
   AboutSectionContent,
@@ -249,9 +250,13 @@ export function ExperiencePage({
         eyebrow={content.tag}
         title={content.title}
         subtitle={content.summary}
+        cover={experienceBanner}
+        coverAlt="Grassy countryside hills with grazing cattle"
+        coverPosition="center 72%"
+        wide
       />
 
-      <div className="page-body">
+      <div className="page-body page-width-wide">
         <section className="page-section" aria-labelledby="experience-timeline">
           <div className="section-title-row">
             <CalendarDays aria-hidden="true" />

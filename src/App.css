@@ -837,7 +837,7 @@
   height: 14px;
 }
 
-.experience-page .page-header-inner {
+.experience-page .page-header:not(.has-cover) .page-header-inner {
   padding-top: 5.5rem;
 }
 
@@ -899,20 +899,20 @@
   box-shadow: 0 0 0 2px var(--green-soft);
 }
 
-.experience-entry {
+.experience-page .experience-entry {
   display: grid;
-  grid-template-columns: 68px minmax(0, 1fr);
-  gap: 1rem;
-  padding: 1rem;
+  grid-template-columns: 88px minmax(0, 1fr);
+  gap: 1.25rem;
+  padding: 1.5rem;
   border: 1px solid var(--border);
   border-radius: 7px;
   background: var(--surface-subtle);
 }
 
-.experience-logo {
+.experience-page .experience-logo {
   display: flex;
-  width: 68px;
-  height: 68px;
+  width: 88px;
+  height: 88px;
   align-items: center;
   justify-content: center;
   overflow: hidden;
@@ -957,10 +957,10 @@
   text-transform: uppercase;
 }
 
-.experience-heading h3 {
+.experience-page .experience-heading h3 {
   margin-top: 0.18rem;
   color: var(--text-primary);
-  font-size: 1.02rem;
+  font-size: 1.2rem;
   font-weight: 650;
   line-height: 1.35;
 }
@@ -993,10 +993,10 @@
   color: #8bc8bd;
 }
 
-.experience-description {
+.experience-page .experience-description {
   margin-top: 0.85rem;
   color: var(--text-secondary);
-  font-size: 0.84rem;
+  font-size: 0.95rem;
   line-height: 1.65;
 }
 
@@ -1165,7 +1165,7 @@
     padding-top: 4rem;
   }
 
-  .experience-page .page-header-inner {
+  .experience-page .page-header:not(.has-cover) .page-header-inner {
     padding-top: 4rem;
   }
 
@@ -1194,17 +1194,21 @@
     top: 10px;
   }
 
-  .experience-entry {
+  .experience-page .experience-entry {
     grid-column: 2;
     grid-row: 2;
-    grid-template-columns: 52px minmax(0, 1fr);
+    grid-template-columns: 64px minmax(0, 1fr);
     gap: 0.75rem;
-    padding: 0.8rem;
+    padding: 1rem;
   }
 
-  .experience-logo {
-    width: 52px;
-    height: 52px;
+  .experience-page .experience-logo {
+    width: 64px;
+    height: 64px;
+  }
+
+  .experience-page .experience-heading h3 {
+    font-size: 1.1rem;
   }
 
   .experience-heading {

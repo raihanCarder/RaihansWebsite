@@ -2,7 +2,6 @@ import ecoHomePhoto from "../assets/echohome.jpg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
 import beaconPhoto from "../assets/beacon.png";
 import checkInChampionsPhoto from "../assets/check-in-champions.jpg";
-import createUoftLogo from "../assets/Logo-Navy (Original).svg";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
 import rocketLogo from "../assets/rocket-logo.jpeg";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
@@ -93,17 +92,6 @@ export const experienceSectionContent: ExperienceSectionContent = {
       description: "Building, shipping, and designing software @ Rocket 🚀",
       logo: rocketLogo,
       logoAlt: "Rocket Innovation Studio logo",
-    },
-    {
-      company: "CREATE UofT",
-      role: "Tech Associate",
-      focus: "",
-      period: "April 2026 - Present",
-      status: "current",
-      description:
-        "Helping build the backend for CREATE UofT's CodeClash platform.",
-      logo: createUoftLogo,
-      logoAlt: "CREATE UofT logo",
     },
   ],
 };
