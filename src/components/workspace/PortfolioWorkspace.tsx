@@ -1,56 +1,15 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, type MouseEvent } from "react";
+import { Link, NavLink, Outlet, useLocation } from "react-router";
 import {
-  BriefcaseBusiness,
   Download,
-  FolderKanban,
   GitBranch,
-  GraduationCap,
-  Info,
   ContactRound,
-  Mail,
   Menu,
   PanelLeftClose,
-  type LucideIcon,
 } from "lucide-react";
 import headerPhoto from "../../assets/headerPhoto.jpeg";
-import {
-  aboutSectionContent,
-  educationSectionContent,
-  experienceSectionContent,
-  footerSectionContent,
-  introSectionContent,
-  projectsSectionContent,
-} from "../../data/siteContent";
-import {
-  ContactPage,
-  ExperiencePage,
-  InfoPage,
-  ProjectsPage,
-  SchoolPage,
-} from "./WorkspacePages";
-
-export type PageId = "info" | "experience" | "school" | "projects" | "contact";
-
-type PageConfig = {
-  id: PageId;
-  label: string;
-  icon: LucideIcon;
-};
-
-const PAGE_CONFIG: PageConfig[] = [
-  { id: "info", label: "Info", icon: Info },
-  { id: "experience", label: "Experience", icon: BriefcaseBusiness },
-  { id: "school", label: "School", icon: GraduationCap },
-  { id: "projects", label: "Projects", icon: FolderKanban },
-  { id: "contact", label: "Contact", icon: Mail },
-];
-
-const PAGE_IDS = new Set<PageId>(PAGE_CONFIG.map((page) => page.id));
-
-const getPageFromHash = (): PageId => {
-  const hash = window.location.hash.slice(1) as PageId;
-  return PAGE_IDS.has(hash) ? hash : "info";
-};
+import { PAGE_CONFIG } from "../../data/pageRoutes";
+import { introSectionContent } from "../../data/siteContent";
 
 const findLink = (label: string) =>
   introSectionContent.links.find((link) => link.label === label)!;
@@ -60,34 +19,20 @@ const githubLink = findLink("GitHub");
 const linkedinLink = findLink("LinkedIn");
 
 export default function PortfolioWorkspace() {
-  const [activePage, setActivePage] = useState<PageId>(getPageFromHash);
+  const { pathname } = useLocation();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const contentRef = useRef<HTMLElement>(null);
-  const activeConfig = PAGE_CONFIG.find((page) => page.id === activePage)!;
-
-  useEffect(() => {
-    const syncPageFromHash = () => {
-      const page = getPageFromHash();
-
-      if (window.location.hash !== `#${page}`) {
-        window.history.replaceState(null, "", `#${page}`);
-      }
-
-      setActivePage(page);
-      setIsMenuOpen(false);
-    };
-
-    syncPageFromHash();
-    window.addEventListener("hashchange", syncPageFromHash);
-    return () => window.removeEventListener("hashchange", syncPageFromHash);
-  }, []);
+  const activeConfig = PAGE_CONFIG.find((page) => page.path === pathname)!;
 
   useEffect(() => {
     document.title = `${activeConfig.label} | Raihan Carder`;
-    contentRef.current?.scrollTo({ top: 0 });
+    contentRef.current?.scrollTo({ top: 0, behavior: "instant" });
 
     const focusTimer = window.setTimeout(() => {
-      contentRef.current?.querySelector<HTMLElement>("h1")?.focus();
+      setIsMenuOpen(false);
+      contentRef.current
+        ?.querySelector<HTMLElement>("h1")
+        ?.focus({ preventScroll: true });
     }, 0);
 
     return () => window.clearTimeout(focusTimer);
@@ -104,10 +49,24 @@ export default function PortfolioWorkspace() {
     return () => window.removeEventListener("keydown", closeOnEscape);
   }, [isMenuOpen]);
 
-  const navigateTo = (page: PageId) => {
-    if (page === activePage) {
+  const navigateTo = (event: MouseEvent<HTMLAnchorElement>, path: string) => {
+    if (
+      event.defaultPrevented ||
+      event.button !== 0 ||
+      event.metaKey ||
+      event.ctrlKey ||
+      event.shiftKey ||
+      event.altKey
+    ) {
+      return;
+    }
+
+    if (path === pathname) {
+      event.preventDefault();
       contentRef.current?.scrollTo({ top: 0, behavior: "smooth" });
-      contentRef.current?.querySelector<HTMLElement>("h1")?.focus();
+      contentRef.current
+        ?.querySelector<HTMLElement>("h1")
+        ?.focus({ preventScroll: true });
     }
     setIsMenuOpen(false);
   };
@@ -116,17 +75,17 @@ export default function PortfolioWorkspace() {
     <div className="workspace">
       <aside className={`workspace-sidebar${isMenuOpen ? " is-open" : ""}`}>
         <div className="sidebar-header">
-          <a
+          <Link
             className="workspace-identity"
-            href="#info"
-            onClick={() => navigateTo("info")}
+            to="/"
+            onClick={(event) => navigateTo(event, "/")}
           >
             <img src={headerPhoto} alt="" />
             <span>
               <strong>Raihan Carder</strong>
               <small>Portfolio workspace</small>
             </span>
-          </a>
+          </Link>
           <button
             className="icon-button sidebar-close"
             type="button"
@@ -140,17 +99,19 @@ export default function PortfolioWorkspace() {
 
         <nav className="sidebar-nav" aria-label="Portfolio pages">
           <p className="sidebar-label">Pages</p>
-          {PAGE_CONFIG.map(({ id, label, icon: Icon }) => (
-            <a
-              className={`sidebar-link${activePage === id ? " is-active" : ""}`}
-              href={`#${id}`}
-              aria-current={activePage === id ? "page" : undefined}
+          {PAGE_CONFIG.map(({ id, path, label, icon: Icon }) => (
+            <NavLink
+              className={({ isActive }) =>
+                `sidebar-link${isActive ? " is-active" : ""}`
+              }
+              to={path}
+              end
               key={id}
-              onClick={() => navigateTo(id)}
+              onClick={(event) => navigateTo(event, path)}
             >
               <Icon aria-hidden="true" />
               <span>{label}</span>
-            </a>
+            </NavLink>
           ))}
 
           <p className="sidebar-label sidebar-label-secondary">Shortcuts</p>
@@ -233,24 +194,7 @@ export default function PortfolioWorkspace() {
         </header>
 
         <main className="workspace-content" ref={contentRef}>
-          {activePage === "info" ? (
-            <InfoPage intro={introSectionContent} about={aboutSectionContent} />
-          ) : null}
-          {activePage === "experience" ? (
-            <ExperiencePage content={experienceSectionContent} />
-          ) : null}
-          {activePage === "school" ? (
-            <SchoolPage content={educationSectionContent} />
-          ) : null}
-          {activePage === "projects" ? (
-            <ProjectsPage content={projectsSectionContent} />
-          ) : null}
-          {activePage === "contact" ? (
-            <ContactPage
-              intro={introSectionContent}
-              footer={footerSectionContent}
-            />
-          ) : null}
+          <Outlet />
         </main>
       </div>
     </div>
