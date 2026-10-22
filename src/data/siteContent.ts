@@ -2,6 +2,7 @@ import ecoHomePhoto from "../assets/echohome.jpg";
 import argusPhoto from "../assets/argus_dashboard.jpg";
 import beaconPhoto from "../assets/beacon.png";
 import checkInChampionsPhoto from "../assets/check-in-champions.jpg";
+import feelPhoto from "../assets/feel.jpg";
 import resumePdf from "../assets/Raihan_Carder_Resume.pdf";
 import rocketLogo from "../assets/rocket-logo.jpeg";
 import smartAirPhoto from "../assets/smartAirPhoto.jpg";
@@ -100,6 +101,37 @@ export const projectsSectionContent: ProjectsSectionContent = {
   tag: "Projects",
   title: "My Favourites",
   projects: [
+    {
+      title: "feel",
+      category: "Interactive Health Tech",
+      projectType: ["hackathon"],
+      summary:
+        "feel turns hard-to-describe pain into a visual story. Paint four distinct sensations directly onto a rotatable 3D body, replay daily check-ins, and compare changes across 45 body regions. Custom shaders bring each sensation to life, while evidence-validated Gemini summaries and printable appointment reports help people communicate what they've been feeling.",
+      image: feelPhoto,
+      imageWidth: 806,
+      imageHeight: 452,
+      timeline: "October 2026",
+      status: "Hackathon build",
+      skills: [
+        "Next.js",
+        "React",
+        "TypeScript",
+        "Three.js",
+        "Tailwind CSS",
+        "PostgreSQL",
+        "Gemini API",
+      ],
+      links: [
+        {
+          label: "GitHub",
+          href: "https://github.com/raihanCarder/hackthevalley",
+        },
+        {
+          label: "Devpost",
+          href: "https://devpost.com/software/h-am9rjy",
+        },
+      ],
+    },
     {
       title: "Check-In Champions",
       category: "Gamified Travel",

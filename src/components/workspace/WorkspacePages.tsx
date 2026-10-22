@@ -23,6 +23,7 @@ import uoftSign from "../../assets/uoftSign.jpg";
 import profilePhoto from "../../assets/profile-photo.jpg";
 import londonBackground from "../../assets/londonbackground.jpeg";
 import experienceBanner from "../../assets/experience-banner.webp";
+import projectsBanner from "../../assets/projects-banner.webp";
 import asciiSignature from "../../assets/raihan-carder-ascii.png";
 import type {
   AboutSectionContent,
@@ -470,8 +471,8 @@ export function ProjectsPage({ content }: { content: ProjectsSectionContent }) {
         eyebrow={content.tag}
         title={content.title}
         subtitle="A gallery of the products, experiments, and team builds I'm most proud of."
-        cover={content.projects[0]?.image}
-        coverAlt={`${content.projects[0]?.title ?? "Project"} interface preview`}
+        cover={projectsBanner}
+        coverAlt="Three friends beside the UofT sign at the University of Toronto"
         coverPosition="center center"
         wide
       />
